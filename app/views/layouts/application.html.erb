@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AdoptDontShop</title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all' %>.
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <div class="header">
+      <h1><%= link_to "Adopt Don't Shop", "/", :class => "link" %></h1>
+      <nav>
+        <ul>
+          <li><%= link_to "Shelters", "/shelters", :class => "link" %></li>
+          <li><%= link_to "Pets", "/pets", :class => "link" %></li>
+        </ul>
+      </nav>
+    </div>
+    <%= yield %>
+    <div class="footer">
+      <p>Adopt Don't Shop<p>
+    </div>
+  </body>
+</html>

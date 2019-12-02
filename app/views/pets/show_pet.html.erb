@@ -1,0 +1,28 @@
+
+<div id="pets_show_section"
+  <div id="pets_show">
+      <div>
+          <p id="pet_name"><%= @pet.name %></p>
+          <li>Sex: <%= @pet.sex %></li>
+          <li>Age: <%= @pet.approximate_age %></li>
+          <li>Shelter ID: <%= @pet.shelter_id %></li>
+          <li>Description: <%= @pet.description %></li>
+          <li>Adoption Status: <%= @pet.adoption_status %></li>
+          <br>
+          <br>
+          <% if @pet.adoption_status == "adoptable" %>
+              <%= link_to 'Submit Adoption Request', "/pets/#{@pet.id}/pending", method: :patch %>
+          <% else %>
+              <%= link_to 'Cancel Adoption Request', "/pets/#{@pet.id}/adoptable", method: :patch %>
+          <% end %><br>
+          <br>
+          <%= link_to 'Edit', "/pets/#{@pet.id}/edit" %><br>
+          <%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %><br>
+          <br>
+          <%= link_to 'Back to Pets', "/pets" %>
+      </div>
+      <div>
+        <img class="img" src= <%= @pet.image %>>
+      </div>
+  </div>
+</div>

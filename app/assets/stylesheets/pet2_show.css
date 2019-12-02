@@ -1,0 +1,93 @@
+.responsive_2 {
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  display: inline-grid;
+  justify-content: space-between;
+  min-width: 350px;
+}
+
+div.gallery_2 {
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+div.gallery_2:hover {
+  border: 1px solid #777;
+}
+
+div.gallery_2 img {
+  width: 100%;
+  height: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#pets_2 {
+  display: inline-flex;
+  flex-flow: wrap;
+}
+
+#pets_show_section {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#pets_show {
+ display: grid;
+ grid-template-columns: auto auto;
+ grid-gap: 10px;
+ padding: 10px;
+}
+
+.img {
+  width: 400px;
+  height: 250px;
+  padding-left: 40px;
+}
+
+#pet_name {
+  display: flex;
+  justify-content: center;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+#shelter_pet {
+  padding-top: 20px;
+  padding-left: 20px;
+  min-height: 100vh;
+}
+
+
+.header_show_pets {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  background: #efefef;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 17px 10px;
+}
+
+nav li:hover {
+  background: #3F8DA7;
+  color: white;
+  cursor: pointer;
+}
+
+.link_pets {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+}

@@ -1,0 +1,15 @@
+
+<div class="page_container">
+<h1><%= @shelter.name %></h1>
+<li>Address:  <%= @shelter.address %></li>
+<li>City:     <%= @shelter.city %></li>
+<li>State:    <%= @shelter.state %></li>
+<li>Zip Code: <%= @shelter.zip %></li>
+
+<br>
+<%= link_to "View Pets", "/shelters/#{@shelter.id}/pets" %><br>
+<div>
+<%= link_to "Edit", "/shelters/#{@shelter.id}/edit" %>
+<%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %>
+</div>
+</div>

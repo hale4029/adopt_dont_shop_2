@@ -1,0 +1,19 @@
+
+<div class="page_container"
+<h2><a href="/shelters">Shelters Index</a></h2>
+<br>
+<%= form_tag '/shelters', method: :post do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name  %><br>
+  <%= label_tag :address %>
+  <%= text_field_tag :address %><br>
+  <%= label_tag :city %>
+  <%= text_field_tag :city %><br>
+  <%= label_tag :state %>
+  <%= text_field_tag :state %><br>
+  <%= label_tag :zip %>
+  <%= text_field_tag :zip %><br>
+  <br>
+  <%= submit_tag 'Create Shelter' %>
+<% end %>
+</div>

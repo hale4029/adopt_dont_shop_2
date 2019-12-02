@@ -1,0 +1,31 @@
+.responsive {
+  padding: 20px;
+  width: 24.99999%;
+  height: 500px;
+  display: inline-grid;
+  justify-content: space-between;
+  min-width: 350px;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#pets {
+  display: inline-flex;
+  flex-flow: wrap;
+}
