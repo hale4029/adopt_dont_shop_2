@@ -1,11 +1,13 @@
 #review_section {
   padding-top: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   border: solid 2px red;
 }
 
-#review- {
-  display: inline-flex;
-  flex-flow: wrap;
+div[id^="review_"] {
+  display: flex;
+  justify-content: center;
+  border: solid 2px red;
 }
