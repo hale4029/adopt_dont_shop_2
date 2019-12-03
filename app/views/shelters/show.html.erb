@@ -15,12 +15,12 @@
 </div>
 
 <div id="review_section">
-  <% @reviews.each do |review| %>
-  <div id="review_<%= review.id %>">
-    <%= review.title %><br>
-    <%= review.rating %><br>
-    <%= review.content %>
-    <img class="img" src= <%= review.picture %>, alt="No Picture">
+  <% @shelter.reviews.each do |review| %>
+  <div id="review-<%= review.id %>">
+        Title: <%= review.title %>
+        Rating: <%= review.rating %>
+        Review: <%= review.content %>
+        <img class="img" src= <%= review.picture %>, alt="No Picture">
   </div>
   <% end %>
 </div>

@@ -22,15 +22,13 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
-    @reviews = Review.where(shelter_id: params[:id])
-    {shelters: @shelters, reviews: @reviews}
   end
 
   def new
   end
 
   def create
-    shelter = Shelter.create(shelter_params)
+    Shelter.create(shelter_params)
     redirect_to '/shelters'
   end
 
