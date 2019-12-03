@@ -1,31 +1,13 @@
 class PetsController < ApplicationController
+
   def index
-    pets = Pet.all
-    @pets = pets.sort_by { |pet| pet.adoption_status }
     if params[:adoptable] == "true"
-      @pets.select! { |pet| pet.adoption_status == "adoptable" }
+      @pets = Pet.where(adoption_status: 'adoptable')
     elsif params[:adoptable] == "false"
-      @pets.select! { |pet| pet.adoption_status == "adoption-pending" }
+      @pets = Pet.where(adoption_status: 'adoption-pending')
     else
-      @pets
+      @pets = Pet.order(:adoption_status)
     end
-  end
-
-  def show
-    @shelter = Shelter.find(params[:shelter_id])
-    pets = @shelter.pets
-    @pets = pets.sort_by { |pet| pet.adoption_status }
-    if params[:adoptable] == "true"
-      @pets.select! { |pet| pet.adoption_status == "adoptable" }
-    elsif params[:adoptable] == "false"
-      @pets.select! { |pet| pet.adoption_status == "adoption-pending" }
-    else
-      @pets
-    end
-  end
-
-  def show_pet
-    @pet = Pet.find(params[:id])
   end
 
   def new
@@ -34,15 +16,23 @@ class PetsController < ApplicationController
 
   def create
     shelter = Shelter.find(params[:shelter_id])
-    pet = shelter.pets.create({
-      name: params[:name],
-      image: params[:image],
-      description: params[:description],
-      sex: params[:sex],
-      approximate_age: params[:approximate_age]
-      })
-    pet.save
+    pet = shelter.pets.create(pet_params)
     redirect_to "/shelters/#{params[:shelter_id]}/pets"
+  end
+
+  def show
+    @shelter = Shelter.find(params[:shelter_id])
+    if params[:adoptable] == "true"
+      @pets = @shelter.pets.where(adoption_status: 'adoptable')
+    elsif params[:adoptable] == "false"
+      @pets = @shelter.pets.where(adoption_status: 'adoption-pending')
+    else
+      @pets = @shelter.pets.order(:adoption_status)
+    end
+  end
+
+  def show_pet
+    @pet = Pet.find(params[:id])
   end
 
   def edit
@@ -51,13 +41,7 @@ class PetsController < ApplicationController
 
   def update
     pet = Pet.find(params[:id])
-    pet.update({
-      name: params[:name],
-      image: params[:image],
-      description: params[:description],
-      sex: params[:sex],
-      approximate_age: params[:approximate_age]
-      })
+    pet.update(pet_params)
     pet.save
     redirect_to "/pets/#{pet.id}"
   end
@@ -69,16 +53,22 @@ class PetsController < ApplicationController
 
   def change_adoption_status
     pet = Pet.find(params[:id])
-    if pet.adoption_status == "adoptable"
-      status = "adoption-pending"
-    else
-      status = "adoptable"
-    end
-    pet.update({
-      adoption_status: status
-      })
+      if pet.adoption_status == "adoptable"
+        status = "adoption-pending"
+      else
+        status = "adoptable"
+      end
+    pet.update({adoption_status: status})
     pet.save
     redirect_to "/pets/#{pet.id}"
   end
 
+private
+  def pet_params
+    params.permit(:name,
+                  :image,
+                  :description,
+                  :sex,
+                  :approximate_age)
+  end
 end
