@@ -39,7 +39,7 @@ describe "reviews for a shelter", type: :feature do
       expect(page).to have_content(@review_2.title)
       expect(page).to have_content(@review_2.rating)
       expect(page).to have_content(@review_2.content)
-      expect(page).to have_css("img[src*='#{@review_2.picture}']")
+      expect(page).to have_content("No Picture")
     end
 
   end

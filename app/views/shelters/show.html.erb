@@ -13,3 +13,14 @@
 <%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %>
 </div>
 </div>
+
+<div id="review_section">
+  <% @reviews.each do |review| %>
+  <div id="review-<%= review.id %>">
+    <%= review.title %>
+    <%= review.rating %>
+    <%= review.content %>
+    <img class="img" src= <%= review.picture %>, alt="No Picture">
+  </div>
+  <% end %>
+</div>

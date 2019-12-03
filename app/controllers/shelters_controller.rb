@@ -21,6 +21,9 @@ class SheltersController < ApplicationController
 
   def show
     @shelter = Shelter.find(params[:id])
+    #require "pry"; binding.pry
+    @reviews = Review.where(shelter_id: params[:id])
+    {shelters: @shelters, reviews: @reviews}
   end
 
   def new

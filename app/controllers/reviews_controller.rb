@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.where(shelter_id: params[:shelter_id])
+  def show
+    @reviews = Review.where(shelter_id: params[:id])
   end
 
 end
