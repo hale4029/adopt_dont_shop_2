@@ -45,7 +45,7 @@ div #adjustments:hover {
   padding-top: 20px;
   margin: 0;
   width: 400px;
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 #container {
