@@ -20,11 +20,15 @@ class SheltersController < ApplicationController
     @helper = [shelters, x, y]
   end
 
+  def show
+    @shelter = Shelter.find(params[:id])
+  end
+
   def new
   end
 
   def create
-    shelter = Shelter.create(shelter_params)
+    Shelter.create(shelter_params)
     redirect_to '/shelters'
   end
 
