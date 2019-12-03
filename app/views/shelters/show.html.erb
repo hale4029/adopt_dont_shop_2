@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="page_container">
 <h1><%= @shelter.name %></h1>
@@ -14,13 +15,36 @@
 </div>
 </div>
 
+
+<div id="review_major">
 <div id="review_section">
   <% @shelter.reviews.each do |review| %>
   <div id="review-<%= review.id %>">
-        Title: <%= review.title %>
-        Rating: <%= review.rating %>
-        Review: <%= review.content %>
-        <img class="img" src= <%= review.picture %>, alt="No Picture">
+    <div id="review_content">
+      <div id="title_review">Title: <%= review.title %></div>
+      <div id="stars">
+        <% checked = review.rating %>
+        <% until checked == 0 do %>
+        <span class="fa fa-star checked"></span>
+        <% checked -= 1 %>
+        <% end %>
+        <% blank = (5 - review.rating) %>
+        <% until blank == 0 do %>
+        <span class="fa fa-star"></span>
+        <% blank -= 1 %>
+        <% end %>
+      </div>
+      <div id="content">
+        <div id="review_stuff">
+        <%= review.content %>
+        </div>
+        <% if review.picture != nil %>
+          <div id="review_img"><img class="img" src= <%= review.picture %>, alt="No Picture"></div>
+        <% else %>
+        <% end %>
+      </div>
+    </div>
   </div>
   <% end %>
+</div>
 </div>
