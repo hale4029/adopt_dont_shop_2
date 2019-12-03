@@ -56,7 +56,7 @@ describe "pets story tests", type: :feature do
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_1.sex)
-      page.should have_no_content(@pet_2.name)
+      expect(page).to_not have_content(@pet_2.name)
 
       visit "/shelters/#{@shelter_2.id}"
       find_link('View Pets').click
@@ -65,7 +65,7 @@ describe "pets story tests", type: :feature do
       expect(page).to have_content(@pet_2.name)
       expect(page).to have_content(@pet_2.approximate_age)
       expect(page).to have_content(@pet_2.sex)
-      page.should have_no_content(@pet_1.name)
+      expect(page).to_not have_content(@pet_1.name)
 
       find_link('Back to Shelter').visible?
 
@@ -84,7 +84,7 @@ describe "pets story tests", type: :feature do
       expect(page).to have_content(@pet_1.shelter_id)
       expect(page).to have_content(@pet_1.description)
       expect(page).to have_content(@pet_1.adoption_status)
-      page.should have_no_content(@pet_2.name)
+      expect(page).to_not have_content(@pet_2.name)
 
     end
   end
@@ -136,7 +136,7 @@ describe "pets story tests", type: :feature do
       visit "/pets/#{@pet_1.id}"
       find_link("Delete").click
 
-      page.should have_no_content('Berkley')
+      expect(page).to_not have_content('Berkley')
 
     end
   end
@@ -178,9 +178,9 @@ describe "pets story tests", type: :feature do
       find_link("Jersey").visible?
       find_link("Only Show Adoptable Pets").click
       find_link("Hershey").visible?
-      page.should have_no_content('Jersey')
+      expect(page).to_not have_content('Jersey')
       find_link("Only Show Adoption-Pending Pets").click
-      page.should have_no_content('Hershey')
+      expect(page).to_not have_content('Hershey')
       find_link("Jersey").visible?
     end
   end
