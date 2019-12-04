@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20191203020949) do
     t.string "title"
     t.integer "rating"
     t.string "content"
-    t.binary "picture"
+    t.binary "picture", default: ""
     t.bigint "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

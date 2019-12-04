@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.string :title
       t.integer :rating
       t.string :content
-      t.binary :picture, default: nil
+      t.binary :picture, default: ""
       t.references :shelter, foreign_key: true
 
       t.timestamps
