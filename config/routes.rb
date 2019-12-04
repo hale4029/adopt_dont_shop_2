@@ -34,5 +34,8 @@ delete '/shelters/:id', to: 'shelters#destroy'
 patch '/pets/:id/pending', to: 'pets#change_adoption_status'
 patch '/pets/:id/adoptable', to: 'pets#change_adoption_status'
 
+patch '/favorites/:id', to: 'favorite#update'
+patch '/favorites', to: 'application#index'
+
 
 end
