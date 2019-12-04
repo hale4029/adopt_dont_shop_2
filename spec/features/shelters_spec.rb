@@ -49,7 +49,7 @@ describe "shelters story tests", type: :feature do
 
       visit "/shelters/new"
 
-      page.should have_no_content('New Sheleter Name')
+      expect(page).to_not have_content('New Sheleter Name')
       expect(page).to have_button("Create Shelter")
       fill_in(:name, :with => 'New Shelter Name')
       fill_in(:address, :with => '123 Pine')
@@ -128,8 +128,7 @@ describe "shelters story tests", type: :feature do
       find_link('Delete').click
 
       expect(page).to have_current_path("/shelters")
-      page.should have_no_content(@shelter_2.name)
-
+      expect(page).to_not have_content(@shelter_2.name)
     end
   end
 

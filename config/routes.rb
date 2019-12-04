@@ -17,8 +17,12 @@ get '/shelters?alpha=true', to: 'shelters#index'
 get '/shelters?alpha=false', to: 'shelters#index'
 get '/shelters/new', to: 'shelters#new'
 post '/shelters', to: 'shelters#create'
+
 get '/shelters/:id', to: 'shelters#show'
 #get '/shelters/:id', to: 'reviews#show'
+get '/shelters/:shelter_id/reviews_new', to: 'reviews#new'
+post '/shelters/:shelter_id', to: 'reviews#create'
+
 get '/shelters/:shelter_id/pets', to: 'pets#show'
 get '/shelters/:shelter_id/pets?adoptable=true', to: 'pets#show'
 get '/shelters/:shelter_id/pets?adoptable=false', to: 'pets#show'
