@@ -24,6 +24,7 @@ get '/shelters/:shelter_id/reviews/:review_id/edit', to: 'reviews#edit'
 get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'
 post '/shelters/:shelter_id', to: 'reviews#create'
 patch '/shelters/:shelter_id/reviews/:review_id', to: 'reviews#update'
+delete '/shelters/:shelter_id/reviews/:review_id', to: 'reviews#destroy'
 
 
 get '/shelters/:shelter_id/pets', to: 'pets#show'
