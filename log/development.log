@@ -32483,3 +32483,154 @@ Processing by PetsController#show_pet as HTML
 Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/pets/2" for ::1 at 2019-12-04 18:03:26 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 204ms (Views: 163.2ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/" for ::1 at 2019-12-04 18:03:28 -0700
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 33ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-04 18:03:36 -0700
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.5ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 68ms (Views: 43.4ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/shelters/1" for ::1 at 2019-12-04 18:03:38 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  Rendered shelters/show.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 117ms (Views: 107.9ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/shelters/1/reviews/2/edit" for ::1 at 2019-12-04 18:03:41 -0700
+Processing by ReviewsController#edit as HTML
+  Parameters: {"shelter_id"=>"1", "review_id"=>"2"}
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/edit.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 51ms (Views: 43.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-12-05 10:49:40 -0700
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 180ms (Views: 170.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-05 10:49:45 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (3.0ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  Rendered pets/index.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 69ms (Views: 41.4ms | ActiveRecord: 18.7ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 10:49:47 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 38ms (Views: 29.4ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 10:49:51 -0700
+Processing by FavoriteController#update as HTML
+  Parameters: {"authenticity_token"=>"2y6Thz9Nl+pQpb1jxG/Ux+7XTHsAKzfMJw5740rXAPH5JQMBerLpvwN6Xvvv4GUMHOHycJo/51LYDx7Zc0P6uw==", "id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 101094ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 10:51:32 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 62.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-12-05 11:03:18 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 154ms (Views: 146.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-05 11:03:21 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.8ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  Rendered pets/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 69ms (Views: 45.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-05 11:03:23 -0700
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.9ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 50ms (Views: 34.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/shelters/1" for ::1 at 2019-12-05 11:03:24 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  Rendered shelters/show.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 102ms (Views: 88.4ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/shelters/1/reviews/1" for ::1 at 2019-12-05 11:03:28 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/shelters/1/reviews/1"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
