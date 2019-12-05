@@ -32,4 +32,22 @@ describe "favorite button changes when clicked and nav link updates", type: :fea
       find_button("Favorite").visible?
     end
 
+    describe "remove pet favorite from favorite index page" do
+      it "removes the pet from the index page and redirect to index page" do
+        visit "/pets/#{@pet_1.id}"
+        expect(page).to have_content("Favorites: 0")
+        find_button("Favorite").click
+        expect(page).to have_content("Favorites: 1")
+
+        visit "/favorites"
+        expect(page).to have_content("Favorites: 1")
+        within "#favorites-#{@pet_1.id}" do
+          find_button("Remove from Favorites").click
+        end
+        expect(page).to have_current_path("/favorites")
+        expect(page).to have_content("Favorites: 0")
+        expect(page).to not_have(@pet.name)
+      end
+    end
+
   end
