@@ -317,7 +317,7 @@
         1,
         null,
         1,
-        null,
+        1,
         null,
         null,
         null
@@ -353,9 +353,9 @@
         1,
         1,
         1,
-        0,
+        1,
         null,
-        0,
+        1,
         0,
         0,
         null,
@@ -1057,11 +1057,11 @@
         1,
         null,
         1,
-        90,
+        91,
         null,
         null,
         1,
-        72,
+        73,
         null,
         null,
         1,
@@ -1179,7 +1179,7 @@
         1,
         null,
         1,
-        88,
+        89,
         null,
         null,
         null
@@ -1325,8 +1325,11 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/favorite_controller.rb": [
+      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/favorites_controller.rb": [
         1,
+        null,
+        1,
+        null,
         null,
         1,
         3,
@@ -1334,6 +1337,8 @@
         3,
         3,
         3,
+        null,
+        null,
         null,
         null,
         null
@@ -1389,6 +1394,6 @@
         null
       ]
     },
-    "timestamp": 1575573949
+    "timestamp": 1575574923
   }
 }
