@@ -9,7 +9,6 @@ class ReviewsController < ApplicationController
     review = @shelter.reviews.new(review_params)
     if review.save
       flash[:success] = 'Review created!'
-      @shelter.reviews.create(review_params)
       redirect_to "/shelters/#{@shelter.id}"
     else
       flash.now[:error] = 'Review not created. Please complete required fields.'
