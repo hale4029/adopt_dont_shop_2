@@ -46,7 +46,7 @@ describe "favorite button changes when clicked and nav link updates", type: :fea
         end
         expect(page).to have_current_path("/favorites")
         expect(page).to have_content("Favorites: 0")
-        expect(page).to not_have(@pet.name)
+        expect(page).to_not have_css("#favorites-#{@pet_1.id}")
       end
     end
 

@@ -5,6 +5,8 @@
       <div class="gallery">
         <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
         <p><img src= <%= pet.image %>></p>
+
+        <%= button_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %>
       </div>
     </div>
   <% end %>
