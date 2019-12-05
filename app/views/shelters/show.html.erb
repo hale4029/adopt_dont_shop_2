@@ -14,7 +14,7 @@
 <%= link_to "Delete", "/shelters/#{@shelter.id}", method: :delete %>
 </div>
 
-<%= link_to "Add Review", "/shelters/#{@shelter.id}/reviews_new" %><br>
+<%= link_to "Add Review", "/shelters/#{@shelter.id}/reviews/new" %><br>
 
 </div>
 
@@ -23,6 +23,7 @@
 <div id="review_section">
   <% @shelter.reviews.each do |review| %>
   <div id="review-<%= review.id %>">
+
     <div id="review_content">
       <div id="title_review">Title: <%= review.title %></div>
       <div id="stars">
@@ -46,6 +47,8 @@
         <% else %>
         <% end %>
       </div>
+    <%= button_to "Edit", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit", method: :get %>
+    <%= button_to "Delete", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete %>
     </div>
   </div>
   <% end %>

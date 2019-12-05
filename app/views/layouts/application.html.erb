@@ -18,6 +18,15 @@
         </ul>
       </nav>
     </div>
+
+
+      <% flash.each do |type, message| %>
+        <section id="flash-<%= type %>">
+        <p><%= message %></p>
+        </section>
+      <% end %>
+
+
     <%= yield %>
     <div class="footer">
       <p>Adopt Don't Shop<p>

@@ -19,9 +19,12 @@ get '/shelters/new', to: 'shelters#new'
 post '/shelters', to: 'shelters#create'
 
 get '/shelters/:id', to: 'shelters#show'
-#get '/shelters/:id', to: 'reviews#show'
-get '/shelters/:shelter_id/reviews_new', to: 'reviews#new'
+
+get '/shelters/:shelter_id/reviews/:review_id/edit', to: 'reviews#edit'
+get '/shelters/:shelter_id/reviews/new', to: 'reviews#new'
 post '/shelters/:shelter_id', to: 'reviews#create'
+patch '/shelters/:shelter_id/reviews/:review_id', to: 'reviews#update'
+
 
 get '/shelters/:shelter_id/pets', to: 'pets#show'
 get '/shelters/:shelter_id/pets?adoptable=true', to: 'pets#show'
