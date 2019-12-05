@@ -33398,3 +33398,395 @@ Processing by FavoritesController#index as HTML
 Completed 200 OK in 22ms (Views: 17.7ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/shelters" for ::1 at 2019-12-05 14:28:15 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (3.1ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 213ms (Views: 188.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/shelters" for ::1 at 2019-12-05 14:28:26 -0700
+Processing by SheltersController#index as HTML
+  Rendering shelters/index.html.erb within layouts/application
+  [1m[36mShelter Load (0.9ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  Rendered shelters/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 46ms (Views: 37.0ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-05 14:28:28 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  Rendered pets/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 47ms (Views: 30.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:28:30 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 31.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:28:32 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"AkfmCmJ5lRZrXoduDLJzwpI9J5pf6T+GhCnl5tOxk2Z/e1Y+dNxydLLcC7L+TNh+BPVwSM5m29F6VQky29ep0g==", "id"=>"2"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:28:32 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:28:57 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:29:02 -0700
+  
+ActionController::RoutingError (No route matches [DELETE] "/favorites/2"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets/2" for ::1 at 2019-12-05 14:29:22 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 51ms (Views: 41.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:29:24 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"fyXR3/53OTB5NiD2osvL9YXIGIfkMzSxsB05dgK6HOPZVO4xI8ACGZ5on5sGweLS50rivv0sLRWJ/GhTSODL0Q==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:29:24 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 55ms (Views: 51.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:43:40 -0700
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 171ms (Views: 140.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:43:48 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (1.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 28.0ms | ActiveRecord: 7.1ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:43:50 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"35SohUMiN4BSgrDMQY4WWNtjCe3v02GZlGsiBMsgt+de+B4pTEg0Lnvy0iNPzdD7tgicdZylAHhc7CP/hmdvOQ==", "id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:43:50 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 36.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:43:54 -0700
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Zo/xz/PrKZMOcth7t6qyidCDSQE3bzF4Rq64VuWb3v/n40dj/IEqPScCupS56XQqvejcmUQZUJmOKbmtqNwGIQ==", "id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:43:54 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 50ms (Views: 44.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:48:51 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 36.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-05 14:49:01 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  Rendered pets/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:03 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (1.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 74ms (Views: 65.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:08 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 47ms (Views: 42.4ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:49:11 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"S1NDMUNoAueivvImJO0fFjIzYpgK5zyRMSGtZT6VYUA+JDpYik6sgYvx1e7jn//K11Ivx0diceEgvFgRgvbmxQ==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:11 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 58ms (Views: 53.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:49:12 -0700
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"cQ+kg1hg986cuqzn6U/F3JkSpF/Gm+I3WV5aRC5Ck3MEeN3qkUZZqLX1iy8uPSUAfHPpAIser0dIw68wkiEU9g==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:12 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 64ms (Views: 58.6ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:49:15 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"QoicxTenxhcE9oSIrfNp6FI43nt0zI58uimw8uWY76w3/+Ws/oFocS25o0BqgYk0t1mTJDlJwwyrtEWGWftoKQ==", "id"=>"2"}
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:15 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:49:16 -0700
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"0RtTHCPf4GQRXTBq7M7VEFgZpN9g79aV6xqD2NOFebKkbCp16vlOAjgSF6IrvDXMvXjpgC1qm+X6h3asb+b+Nw==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:16 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 41ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:49:20 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"Xsdn5T7IMAgIaB01oHSabOCwvnQ76mNuXl79Gy/CGncrsB6M9+6ebiEnOv1nBnqwBdHzK3ZvLh5Pwwhvk6Gd8g==", "id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:20 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:49:23 -0700
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qkttQxvkYzALUF4q32xYanvl6HR0p9KBlevfZyC/SbbfPBQq0sLNViIfeeIYHri2noSlKzkin/GEdioTnNzOMw==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:23 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 40ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:49:24 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"qn+xQ2vlbedMpzRYcAnAeBblVETvj/HONgpXRRfRu7TfCMgqosPDgWXoE5C3eyCk84QZG6IKvL4nl6Ixq7I8MQ==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:24 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 48ms (Views: 43.7ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:49:25 -0700
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DOlrbjJybNMzR68hUhjmp52JHWI/7qvc7x5lyOA/eh55nhIH+1TCtRoIiOmVagZ7eOhQPXJr5qz+g5C8XFz9mw==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:25 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:49:26 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"quhA+oe8STZrCnacnqj9tPfR+8Lmc3quzcx3i3/sIdjfnzmTTprnUEJFUVRZ2h1oErC2nav2N97cUYL/w4+mXQ==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:26 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/favorites/2" for ::1 at 2019-12-05 14:49:27 -0700
+Processing by FavoritesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/cqk99CiSLQ9TRRZryN4rd1FlxS8gFT7xFSbhKaZSHyIvd2eGYTm0hQCM5FoUZhxOCTaS/EFGYvVyW7wGvrP+Q==", "id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:27 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-05 14:49:29 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"oUGjcN+DuTlAuczmmO7Q9MPoEBEOycF4ldRavr91G3jUNtoZFqUXX2n26y5fnDAoJoldTkNMjAiESa/KAxac/Q==", "id"=>"2"}
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-05 14:49:29 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  Rendered pets/show_pet.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+

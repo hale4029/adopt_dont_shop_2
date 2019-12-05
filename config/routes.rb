@@ -39,6 +39,6 @@ patch '/pets/:id/adoptable', to: 'pets#change_adoption_status'
 
 patch '/favorites/:id', to: 'favorites#update'
 get '/favorites', to: 'favorites#index'
-
+delete '/favorites/:id', to: 'favorites#destroy'
 
 end

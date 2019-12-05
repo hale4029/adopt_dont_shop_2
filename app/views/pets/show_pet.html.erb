@@ -1,7 +1,11 @@
 <div id="pets_show_section"
   <div id="pets_show">
       <div>
-          <%= button_to "Favorite", "/favorites/#{@pet.id}", method: :patch %>
+          <% if @favorites.contents.keys.include?(@pet.id.to_s) %>
+            <%= button_to "Unfavorite", "/favorites/#{@pet.id}", method: :delete %>
+          <% else %>
+            <%= button_to "Favorite", "/favorites/#{@pet.id}", method: :patch %>
+          <% end %>
           <p id="pet_name"><%= @pet.name %></p>
           <li>Sex: <%= @pet.sex %></li>
           <li>Age: <%= @pet.approximate_age %></li>
