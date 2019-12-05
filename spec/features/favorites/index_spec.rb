@@ -23,12 +23,20 @@ describe "favorites index page", type: :feature do
     visit "/pets/#{@pet_1.id}"
     find_button("Favorite").click
     expect(page).to have_current_path("/pets/#{@pet_1.id}")
-    click_link("Favorites: 1")
+    visit "/pets/#{@pet_2.id}"
+    find_button("Favorite").click
+    expect(page).to have_current_path("/pets/#{@pet_2.id}")
+    click_link("Favorites: 2")
     expect(page).to have_current_path("/favorites")
 
-      within "#pet-#{@pet_1.id}" do
-        expect(page).to have_content(@pet_1.title)
-        expect(page).to_not have_css("img[src*='#{@pet_1.image}']")
+      within "#favorites-#{@pet_1.id}" do
+        expect(page).to have_content(@pet_1.name)
+        expect(page).to have_css("img[src*='#{@pet_1.image}']")
+      end
+
+      within "#favorites-#{@pet_2.id}" do
+        expect(page).to have_content(@pet_2.name)
+        expect(page).to have_css("img[src*='#{@pet_2.image}']")
       end
   end
 
