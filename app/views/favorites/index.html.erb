@@ -1,0 +1,12 @@
+<div id="container">
+<div id="pets">
+  <% @pets.each do |pet| %>
+    <div class="responsive" id="favorites-<%= pet.id %>" >
+      <div class="gallery">
+        <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
+        <p><img src= <%= pet.image %>></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

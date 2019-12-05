@@ -26,7 +26,6 @@ post '/shelters/:shelter_id', to: 'reviews#create'
 patch '/shelters/:shelter_id/reviews/:review_id', to: 'reviews#update'
 delete '/shelters/:shelter_id/reviews/:review_id', to: 'reviews#destroy'
 
-
 get '/shelters/:shelter_id/pets', to: 'pets#show'
 get '/shelters/:shelter_id/pets?adoptable=true', to: 'pets#show'
 get '/shelters/:shelter_id/pets?adoptable=false', to: 'pets#show'
@@ -38,8 +37,8 @@ delete '/shelters/:id', to: 'shelters#destroy'
 patch '/pets/:id/pending', to: 'pets#change_adoption_status'
 patch '/pets/:id/adoptable', to: 'pets#change_adoption_status'
 
-patch '/favorites/:id', to: 'favorite#update'
-#patch '/favorites', to: 'application#index'
+patch '/favorites/:id', to: 'favorites#update'
+get '/favorites', to: 'favorites#index'
 
 
 end

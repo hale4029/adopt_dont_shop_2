@@ -14,7 +14,7 @@
         <ul>
           <li><%= link_to "Shelters", "/shelters", :class => "link" %></li>
           <li><%= link_to "Pets", "/pets", :class => "link" %></li>
-          <li>Favorites: <%= @favorites.total_count %></li>
+          <li><%= link_to "Favorites: #{@favorites.total_count}", "/favorites", :class => "link" %></li>
         </ul>
       </nav>
     </div>
