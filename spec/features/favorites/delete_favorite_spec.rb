@@ -31,5 +31,5 @@ describe "favorite button changes when clicked and nav link updates", type: :fea
       expect(page).to have_no_button("Unfavorite")
       find_button("Favorite").visible?
     end
-    
+
   end

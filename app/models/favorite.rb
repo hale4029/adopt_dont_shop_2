@@ -10,7 +10,11 @@ class Favorite
   end
 
   def add_pet(id)
-    @contents[id.to_s] = @contents[id.to_s].to_i + 1
+      @contents[id.to_s] = 1
+  end
+
+  def remove_pet(id)
+    @contents.delete(id.to_s)
   end
 
   # def count_of(id)
