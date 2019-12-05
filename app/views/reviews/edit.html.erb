@@ -1,6 +1,5 @@
 <h1>Edit Review</h1>
-
-<%= form_tag("/shelters/#{@shelter.id}/reviews/#{@review.id}", method: :patch) do %><section class='form'>
+<%= form_tag "/shelters/#{@shelter_id}/reviews/#{@review.id}", method: :patch do %><section class='form'>
   <%= label_tag "Title:" %>
   <%= text_field_tag :title, @review.title %><br>
   <%= label_tag "Rating:" %>
