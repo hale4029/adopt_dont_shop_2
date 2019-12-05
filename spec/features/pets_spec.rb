@@ -35,13 +35,13 @@ describe "pets story tests", type: :feature do
       expect(page).to have_content(@pet_1.name)
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_1.sex)
-      expect(page).to have_content(@pet_1.shelter_id)
+      expect(page).to have_content(@pet_1.shelter.name)
 
       expect(page).to have_css("img[src*='https://www.petmd.com/sites/default/files/Acute-Dog-Diarrhea-47066074.jpg']")
       expect(page).to have_content(@pet_2.name)
       expect(page).to have_content(@pet_2.approximate_age)
       expect(page).to have_content(@pet_2.sex)
-      expect(page).to have_content(@pet_2.shelter_id)
+      expect(page).to have_content(@pet_2.shelter.name)
     end
 
   end
@@ -81,7 +81,7 @@ describe "pets story tests", type: :feature do
       expect(page).to have_css("img[src*='https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080']")
       expect(page).to have_content(@pet_1.approximate_age)
       expect(page).to have_content(@pet_1.sex)
-      expect(page).to have_content(@pet_1.shelter_id)
+      expect(page).to have_content(@pet_1.shelter.name)
       expect(page).to have_content(@pet_1.description)
       expect(page).to have_content(@pet_1.adoption_status)
       expect(page).to_not have_content(@pet_2.name)
