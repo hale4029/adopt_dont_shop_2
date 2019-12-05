@@ -17,6 +17,13 @@
         </ul>
       </nav>
     </div>
+
+    <section id="flash-message">
+      <% flash.each do |type, message| %>
+        <p><%= message %></p>
+      <% end %>
+    </section>
+    
     <%= yield %>
     <div class="footer">
       <p>Adopt Don't Shop<p>
