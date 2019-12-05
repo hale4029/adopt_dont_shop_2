@@ -31,20 +31,23 @@ describe "favorites", type: :feature do
   it "nav bar counts the amount of favorited pets"  do
 
     visit "/"
-    find_link("Favorites: 0").visible?
+    #find_link("Favorites: 0").visible?
     visit "/shelters"
-    find_link("Favorites: 0").visible?
+    #find_link("Favorites: 0").visible?
+    expect(page).to have_content("Favorites: 0")
 
     visit "/pets/#{@pet_1.id}"
-    find_link("Favorites: 0").visible?
+    #find_link("Favorites: 0").visible?
     find_button("Favorite").click
-    find_link("Favorites: 1").visible?
-    expect(page).to have_content("#{@pet_1.name} added to favorites!")
+    #find_link("Favorites: 1").visible?
+    expect(page).to have_content("Favorites: 1")
+    expect(page).to have_content("#{@pet_1.name} added to your favorites!")
 
     visit "/pets/#{@pet_2.id}"
     find_button("Favorite").click
-    find_link("Favorites: 2").visible?
-    expect(page).to have_content("#{@pet_2.name} added to favorites!")
+    expect(page).to have_content("Favorites: 2")
+    #find_link("Favorites: 2").visible?
+    expect(page).to have_content("#{@pet_2.name} added to your favorites!")
     expect(page).to have_current_path("/pets/#{@pet_2.id}")
 
   end
