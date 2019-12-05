@@ -18,12 +18,14 @@
       </nav>
     </div>
 
-    <section id="flash-message">
+
       <% flash.each do |type, message| %>
+        <section id="flash-<%= type %>">
         <p><%= message %></p>
+        </section>
       <% end %>
-    </section>
-    
+
+
     <%= yield %>
     <div class="footer">
       <p>Adopt Don't Shop<p>

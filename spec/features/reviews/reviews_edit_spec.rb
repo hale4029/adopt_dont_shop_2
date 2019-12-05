@@ -81,5 +81,39 @@ describe "shelters show page", type: :feature do
       expect(page).to_not have_content('Smelly!')
       expect(page).to_not have_content('Dog poop everywhere!')
     end
+
+    it "does not allow a user to edit a review without required information" do
+
+      visit "/shelters/#{@shelter_1.id}/reviews/#{@review_2.id}/edit"
+
+      fill_in 'title', with: ''
+
+      click_button('Submit')
+
+      expect(page).to_not have_content('Wonderful')
+      expect(page).to have_content('Review not saved. Please complete required fields.')
+      expect(page).to have_button('Submit')
+
+      fill_in 'title', with: 'This place is great!'
+      fill_in 'content', with: ''
+
+      click_button('Submit')
+
+      expect(page).to have_content('Review not saved. Please complete required fields.')
+      expect(page).to have_button('Submit')
+
+      fill_in 'title', with: 'Love this place!'
+      select '5', from: :rating
+      fill_in 'content', with: 'Always has a great selection of dogs, puppies and more!'
+
+      click_button('Submit')
+
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+      expect(page).to have_content('Love this place!')
+      expect(page).to have_content('Always has a great selection of dogs, puppies and more!')
+
+      expect(page). to_not have_content('This place is great!')
+      expect(page). to_not have_content('Appreciate the selection.')
+    end
   end
 end

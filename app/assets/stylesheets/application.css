@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
-#flash-message {
+#flash-error {
   color: red;
+}
+#flash-success {
+  color: green;
 }
