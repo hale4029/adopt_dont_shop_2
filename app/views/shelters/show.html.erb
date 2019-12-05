@@ -47,8 +47,9 @@
           <div id="review_img"><img class="img" src= <%= review.picture %>, alt="No Picture"></div>
         <% else %>
         <% end %>
-      </div><br>
-      <%= button_to "Edit", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit", method: :get %>
+      </div>
+    <%= button_to "Edit", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit", method: :get %>
+    <%= button_to "Delete", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete %>
     </div>
   </div>
   <% end %>
