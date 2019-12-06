@@ -50,9 +50,4 @@ describe "favorites index page", type: :feature do
     find_link("Favorites: 1").visible?
     expect(page).to_not have_content("No Favorites Added")
   end
-
-  end
-
-
-
 end
