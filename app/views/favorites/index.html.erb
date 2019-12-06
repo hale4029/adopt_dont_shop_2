@@ -1,5 +1,6 @@
 <nav><%= @pets.length == 0 ? "No Favorites Added" : "" %></nav>
 
+<%= link_to "Delete All Favorited Pets", "/favorites/delete_all", method: :delete %>
 
 <div id="container">
 <div id="pets">

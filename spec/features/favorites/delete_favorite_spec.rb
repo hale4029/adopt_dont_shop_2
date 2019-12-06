@@ -44,9 +44,40 @@ describe "favorite button changes when clicked and nav link updates", type: :fea
         within "#favorites-#{@pet_1.id}" do
           find_button("Remove from Favorites").click
         end
+
+        expect(page).to have_content("#{@pet_1.name} was removed from your favorites.")
         expect(page).to have_current_path("/favorites")
         expect(page).to have_content("Favorites: 0")
         expect(page).to_not have_css("#favorites-#{@pet_1.id}")
+      end
+    end
+
+    describe "remove all pets from favorites' index page" do
+      it "removes all pets from favorites' index page" do
+        visit "/pets/#{@pet_1.id}"
+        expect(page).to have_content("Favorites: 0")
+        find_button("Favorite").click
+        expect(page).to have_content("Favorites: 1")
+
+        visit "/pets/#{@pet_2.id}"
+        expect(page).to have_content("Favorites: 1")
+        find_button("Favorite").click
+        expect(page).to have_content("Favorites: 2")
+        visit "/favorites"
+        within "#favorites-#{@pet_1.id}" do
+          expect(page).to have_content(@pet_1.name)
+          expect(page).to have_css("img[src*='#{@pet_1.image}']")
+        end
+
+        within "#favorites-#{@pet_2.id}" do
+          expect(page).to have_content(@pet_2.name)
+          expect(page).to have_css("img[src*='#{@pet_2.image}']")
+        end
+        find_link('Delete All Favorited Pets').click
+        expect(page).to_not have_css("#favorites-#{@pet_1.id}")
+        expect(page).to_not have_css("#favorites-#{@pet_2.id}")
+        expect(page).to have_content("Favorites: 0")
+        expect(page).to have_content("All pets were removed to your favorites.")
       end
     end
 
