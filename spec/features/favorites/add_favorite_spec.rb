@@ -41,13 +41,13 @@ describe "favorites", type: :feature do
     find_button("Favorite").click
     #find_link("Favorites: 1").visible?
     expect(page).to have_content("Favorites: 1")
-    expect(page).to have_content("#{@pet_1.name} added to your favorites!")
+    expect(page).to have_content("#{@pet_1.name} was added to your favorites!")
 
     visit "/pets/#{@pet_2.id}"
     find_button("Favorite").click
     expect(page).to have_content("Favorites: 2")
     #find_link("Favorites: 2").visible?
-    expect(page).to have_content("#{@pet_2.name} added to your favorites!")
+    expect(page).to have_content("#{@pet_2.name} was added to your favorites!")
     expect(page).to have_current_path("/pets/#{@pet_2.id}")
 
   end
