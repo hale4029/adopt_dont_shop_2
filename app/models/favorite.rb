@@ -17,7 +17,7 @@ class Favorite
     @contents.delete(id.to_s)
   end
 
-  # def count_of(id)
-  #  @contents[id.to_s] = count_of(id) + 1
-  # end
+  def remove_all
+    @contents.each { |key, value| remove_pet(key) }
+  end
 end
