@@ -71,9 +71,10 @@ describe "favorite button changes when clicked and nav link updates", type: :fea
           expect(page).to have_content(@pet_2.name)
           expect(page).to have_css("img[src*='#{@pet_2.image}']")
         end
-        find_link('Delete All Favorites')
+        find_link('Delete All Favorited Pets').click
         expect(page).to_not have_css("#favorites-#{@pet_1.id}")
         expect(page).to_not have_css("#favorites-#{@pet_2.id}")
+        expect(page).to have_content("Favorites: 0")
       end
     end
 
