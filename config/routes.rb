@@ -42,6 +42,6 @@ get '/favorites', to: 'favorites#index'
 delete '/favorites/delete_all', to: 'favorites#destroy_all'
 delete '/favorites/:id', to: 'favorites#destroy'
 
-get '/favorites/application', to: 'adoption#index'
+get '/favorites/application', to: 'applications#index'
 
 end
