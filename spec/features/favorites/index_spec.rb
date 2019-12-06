@@ -40,6 +40,14 @@ describe "favorites index page", type: :feature do
       end
   end
 
-
-
+  it "should have a notification that no pets are in the favorites index" do
+    visit "/favorites"
+    find_link("Favorites: 0").visible?
+    expect(page).to have_content("No Favorites Added")
+    visit "/pets/#{@pet_1.id}"
+    find_button("Favorite").click
+    visit "/favorites"
+    find_link("Favorites: 1").visible?
+    expect(page).to_not have_content("No Favorites Added")
+  end
 end
