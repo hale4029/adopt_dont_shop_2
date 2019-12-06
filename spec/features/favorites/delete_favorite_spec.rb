@@ -50,4 +50,31 @@ describe "favorite button changes when clicked and nav link updates", type: :fea
       end
     end
 
+    describe "remove all pets from favorites' index page" do
+      it "removes all pets from favorites' index page" do
+        visit "/pets/#{@pet_1.id}"
+        expect(page).to have_content("Favorites: 0")
+        find_button("Favorite").click
+        expect(page).to have_content("Favorites: 1")
+
+        visit "/pets/#{@pet_2.id}"
+        expect(page).to have_content("Favorites: 1")
+        find_button("Favorite").click
+        expect(page).to have_content("Favorites: 2")
+        visit "/favorites"
+        within "#favorites-#{@pet_1.id}" do
+          expect(page).to have_content(@pet_1.name)
+          expect(page).to have_css("img[src*='#{@pet_1.image}']")
+        end
+
+        within "#favorites-#{@pet_2.id}" do
+          expect(page).to have_content(@pet_2.name)
+          expect(page).to have_css("img[src*='#{@pet_2.image}']")
+        end
+        find_link('Delete All Favorites')
+        expect(page).to_not have_css("#favorites-#{@pet_1.id}")
+        expect(page).to_not have_css("#favorites-#{@pet_2.id}")
+      end
+    end
+
   end
