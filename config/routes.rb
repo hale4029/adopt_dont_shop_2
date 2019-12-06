@@ -41,4 +41,6 @@ patch '/favorites/:id', to: 'favorites#update'
 get '/favorites', to: 'favorites#index'
 delete '/favorites/:id', to: 'favorites#destroy'
 
+get '/favorites/application', to: 'adoption#index'
+
 end
