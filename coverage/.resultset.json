@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/spec_helper.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/spec_helper.rb": [
         null,
         null,
         null,
@@ -99,14 +99,14 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/environment.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/application.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/application.rb": [
         1,
         null,
         1,
@@ -139,12 +139,12 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/boot.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/environments/test.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/environments/test.rb": [
         1,
         null,
         null,
@@ -188,7 +188,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/application_controller_renderer.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -198,7 +198,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/assets.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -214,7 +214,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/backtrace_silencers.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -223,20 +223,20 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/cookies_serializer.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/inflections.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -254,13 +254,13 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/mime_types.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/initializers/wrap_parameters.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -276,7 +276,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/config/routes.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/config/routes.rb": [
         1,
         null,
         null,
@@ -319,14 +319,75 @@
         1,
         1,
         1,
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/helpers/application_helper.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/favorites/add_favorite_spec.rb": [
         1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/favorites/delete_favorite_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/favorites/delete_favorite_spec.rb": [
         1,
         null,
         1,
@@ -412,7 +473,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/favorites/index_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/favorites/index_spec.rb": [
         1,
         null,
         1,
@@ -467,7 +528,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/pets_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/pets_spec.rb": [
         1,
         null,
         1,
@@ -662,7 +723,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/reviews/reviews_create_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/reviews/reviews_create_spec.rb": [
         1,
         null,
         1,
@@ -749,7 +810,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/reviews/reviews_delete_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/reviews/reviews_delete_spec.rb": [
         1,
         null,
         1,
@@ -797,7 +858,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/reviews/reviews_edit_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/reviews/reviews_edit_spec.rb": [
         1,
         null,
         1,
@@ -918,7 +979,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/reviews/reviews_show_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/reviews/reviews_show_spec.rb": [
         1,
         null,
         1,
@@ -968,7 +1029,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/features/shelters_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/features/shelters_spec.rb": [
         1,
         null,
         1,
@@ -1119,7 +1180,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/models/favorite_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/models/favorite_spec.rb": [
         1,
         null,
         1,
@@ -1154,143 +1215,272 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/models/favorite.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/models/favorite.rb": [
         1,
         1,
         null,
         1,
-        119,
+        130,
         null,
         null,
         1,
-        93,
+        101,
+        null,
+        null,
+        1,
+        15,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        1,
+        3,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/models/pet_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/models/pet.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/models/review_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/models/review.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/spec/models/shelter_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/models/shelter.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/pets_controller.rb": [
+        1,
+        null,
+        1,
+        8,
+        1,
+        7,
+        1,
+        null,
+        6,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        4,
+        4,
+        0,
+        4,
+        0,
+        null,
+        4,
+        null,
+        null,
+        null,
+        1,
+        34,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        3,
+        3,
+        2,
+        null,
+        1,
+        null,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        128,
+        null,
+        null,
+        null
+      ],
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/favorites_controller.rb": [
+        1,
+        null,
+        1,
+        8,
+        8,
+        9,
+        9,
+        null,
         null,
         null,
         1,
         12,
+        12,
+        12,
+        12,
+        12,
         null,
         null,
         1,
-        4,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/models/pet_spec.rb": [
-        1,
-        null,
-        1,
-        1,
+        2,
         2,
         2,
         2,
         2,
         null,
-        2,
-        2,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/models/pet.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/models/review_spec.rb": [
-        1,
         null,
         1,
         1,
-        2,
-        2,
-        2,
-        null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/models/review.rb": [
+        3,
         1,
         1,
-        null,
         1,
         null,
         null,
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/spec/models/shelter_spec.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/applications_controller.rb": [
         1,
         null,
         1,
         1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        1,
-        2,
-        2,
         null,
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/models/shelter.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/welcome_controller.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/welcome_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        117,
-        null,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/shelters_controller.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/shelters_controller.rb": [
         1,
         null,
         1,
@@ -1355,121 +1545,7 @@
         null,
         null
       ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/pets_controller.rb": [
-        1,
-        null,
-        1,
-        8,
-        1,
-        7,
-        1,
-        null,
-        6,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        4,
-        4,
-        0,
-        4,
-        0,
-        null,
-        4,
-        null,
-        null,
-        null,
-        1,
-        28,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        3,
-        3,
-        2,
-        null,
-        1,
-        null,
-        3,
-        3,
-        3,
-        null,
-        null,
-        1,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/favorites_controller.rb": [
-        1,
-        null,
-        1,
-        7,
-        7,
-        6,
-        6,
-        null,
-        null,
-        null,
-        1,
-        9,
-        9,
-        9,
-        9,
-        9,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        1,
-        1,
-        3,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/controllers/reviews_controller.rb": [
+      "/Users/mel-rob/turing/mod_2/projects/adopt_dont_shop_2/app/controllers/reviews_controller.rb": [
         1,
         null,
         1,
@@ -1520,6 +1596,6 @@
         null
       ]
     },
-    "timestamp": 1575669341
+    "timestamp": 1575670921
   }
 }
