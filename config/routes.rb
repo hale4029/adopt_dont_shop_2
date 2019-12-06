@@ -39,6 +39,7 @@ patch '/pets/:id/adoptable', to: 'pets#change_adoption_status'
 
 patch '/favorites/:id', to: 'favorites#update'
 get '/favorites', to: 'favorites#index'
+delete '/favorites/delete_all', to: 'favorites#destroy_all'
 delete '/favorites/:id', to: 'favorites#destroy'
 
 get '/favorites/application', to: 'adoption#index'

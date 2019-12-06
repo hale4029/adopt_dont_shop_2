@@ -1,3 +1,7 @@
+<nav><%= @pets.length == 0 ? "No Favorites Added" : "" %></nav>
+
+<%= link_to "Delete All Favorited Pets", "/favorites/delete_all", method: :delete %>
+
 <div id="container">
 <h1>Favorite Pets</h1>
 <div id="pets">
@@ -6,6 +10,8 @@
       <div class="gallery">
         <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
         <p><img src= <%= pet.image %>></p>
+
+        <%= button_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %>
       </div>
     </div>
   <% end %>
