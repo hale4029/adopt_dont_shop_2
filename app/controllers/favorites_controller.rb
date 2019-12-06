@@ -25,8 +25,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy_all
-    pets = Pet.all
-    pets.each { |pet| @favorites.remove_pet(pet.id) }
+    @favorites.remove_all
     session[:favorites] = @favorites.contents
     flash[:notice] = "All pets were removed to your favorites."
     redirect_back(fallback_location: "/favorites")
