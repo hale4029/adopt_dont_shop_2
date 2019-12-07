@@ -5,8 +5,12 @@ class ApplicationsController < ApplicationController
   end
 
   def create
-    app = Application.new(app_params)
-    app.save
+    app = Application.create(app_params)
+    pets = params[:favorite_ids].map { |id| Pet.find(id) }
+    app.pets << pets
+    pets.each { |pet| @favorites.remove_pet(pet.id) }
+    app.update_adoption_status(pets)
+    flash[:success] = "Your application was submitted."
     redirect_to "/favorites"
   end
 
