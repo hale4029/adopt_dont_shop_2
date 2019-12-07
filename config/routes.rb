@@ -42,7 +42,7 @@ get '/favorites', to: 'favorites#index'
 delete '/favorites/delete_all', to: 'favorites#destroy_all'
 delete '/favorites/:id', to: 'favorites#destroy'
 
-get '/applications', to: 'applications#index'
+get '/applications/new', to: 'applications#new'
 post '/applications', to: 'applications#create'
 
 end
