@@ -50,24 +50,33 @@ RSpec.describe "adoption application" do
     visit "/favorites"
     click_button 'Create Application'
 
-    expect(current_path).to eq("/favorites/application")
+    expect(current_path).to eq("/applications")
 
-    within "#pet-#{@pet_1.id}" do
+    expect(page).to have_content("Adoption Application")
+
+    within "##{@pet_1.id}-section" do
       expect(page).to have_content("#{@pet_1.name}")
-      expect(page).to have_css("img[src*='https://www.lllreptile.com/uploads/images/StoreInventoryImage/14570/large']")
-      expect(page).to have_field('yes_1212', checked: false)
+      expect(page).to have_field("checkbox-#{@pet_1.id}", checked: false)
     end
 
-    within "#pet-#{@pet_2.id}" do
+    within "##{@pet_2.id}-section" do
       expect(page).to have_content("#{@pet_2.name}")
-      expect(page).to have_css("img[src*='https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg']")
-      expect(page).to have_field('yes_1212', checked: false)
+      expect(page).to have_field("checkbox-#{@pet_2.id}", checked: false)
     end
 
-    within "#pet-#{@pet_3.id}" do
+    within "##{@pet_3.id}-section" do
       expect(page).to have_content("#{@pet_3.name}")
-      expect(page).to have_css("img[src*='https://localtvwiti.files.wordpress.com/2016/06/thinkstockphotos-528306066.jpg?quality=85&strip=all&w=400&h=225&crop=1']")
-      expect(page).to have_field('yes_1212', checked: false)
+      expect(page).to have_field("checkbox-#{@pet_3.id}", checked: false)
     end
+
+    find_field(:name)
+    find_field(:address)
+    find_field(:city)
+    find_field(:state)
+    find_field(:zip)
+    find_field(:phone)
+    find_field(:description)
+
+    expect(page).to have_button('Submit')
   end
 end
