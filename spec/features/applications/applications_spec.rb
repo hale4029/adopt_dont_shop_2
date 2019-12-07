@@ -36,7 +36,7 @@ RSpec.describe "adoption application" do
                         shelter_id: @shelter_2.id)
     end
 
-  it "shows selection of pets that have been favorited" do
+  it "shows selection of pets that have been favorited and allows a user to submit application" do
 
     visit "/pets/#{@pet_1.id}"
     click_button 'Favorite'
@@ -69,14 +69,15 @@ RSpec.describe "adoption application" do
       expect(page).to have_field("checkbox-#{@pet_3.id}", checked: false)
     end
 
-    find_field(:name)
-    find_field(:address)
-    find_field(:city)
-    find_field(:state)
-    find_field(:zip)
-    find_field(:phone)
-    find_field(:description)
+    fill_in 'name', with: 'Harrison Levin'
+    fill_in 'address', with: '1234 Lame Street'
+    fill_in 'city', with: 'Denver'
+    fill_in 'state', with: 'CO'
+    fill_in 'zip', with: '80211'
+    fill_in 'phone', with: '720-111-2222'
+    fill_in 'description', with: 'I love all of these pets.'
 
-    expect(page).to have_button('Submit')
+    click_button 'Submit'
   end
+
 end
