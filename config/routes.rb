@@ -43,5 +43,6 @@ delete '/favorites/delete_all', to: 'favorites#destroy_all'
 delete '/favorites/:id', to: 'favorites#destroy'
 
 get '/applications', to: 'applications#index'
+post '/applications', to: 'applications#create'
 
 end
