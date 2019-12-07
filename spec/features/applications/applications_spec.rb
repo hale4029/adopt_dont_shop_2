@@ -81,6 +81,17 @@ RSpec.describe "adoption application" do
     fill_in 'description', with: 'I love all of these pets.'
 
     click_button 'Submit'
-  end
 
+    expect(current_path).to eq('/favorites')
+    expect(page).to have_content('Your application was submitted.')
+    expect(page).to have_content('Favorites: 1')
+
+    within "#favorites-#{@pet_3.id}" do
+      expect(page).to have_content(@pet_3.name)
+      expect(page).to have_css("img[src*='#{@pet_3.image}']")
+    end
+
+    expect(page).to_not have_css("#favorites-#{@pet_1.id}")
+    expect(page).to_not have_css("#favorites-#{@pet_2.id}")
+  end
 end
