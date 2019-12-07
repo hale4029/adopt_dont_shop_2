@@ -50,7 +50,7 @@ RSpec.describe "adoption application" do
     visit "/favorites"
     click_button 'Create Application'
 
-    expect(current_path).to eq("/applications")
+    expect(current_path).to eq("/applications/new")
 
     expect(page).to have_content("Adoption Application")
 
@@ -93,5 +93,34 @@ RSpec.describe "adoption application" do
 
     expect(page).to_not have_css("#favorites-#{@pet_1.id}")
     expect(page).to_not have_css("#favorites-#{@pet_2.id}")
+  end
+
+  it "will not allow you to submit application without required fields" do
+    visit "/pets/#{@pet_1.id}"
+    click_button 'Favorite'
+
+    visit "/pets/#{@pet_2.id}"
+    click_button 'Favorite'
+
+    visit "/pets/#{@pet_3.id}"
+    click_button 'Favorite'
+
+    visit "/favorites"
+    click_button 'Create Application'
+
+    expect(current_path).to eq("/applications/new")
+
+    fill_in 'name', with: ''
+    fill_in 'address', with: '1234 Lame Street'
+    fill_in 'city', with: 'Denver'
+    fill_in 'state', with: 'CO'
+    fill_in 'zip', with: '80211'
+    fill_in 'phone', with: '720-111-2222'
+    fill_in 'description', with: 'I love all of these pets.'
+
+    click_button 'Submit'
+
+    expect(page).to have_content('Application not submitted. Please complete required fields.')
+    expect(page).to have_button 'Submit'
   end
 end
