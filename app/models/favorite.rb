@@ -17,6 +17,12 @@ class Favorite
     @contents.delete(id.to_s)
   end
 
+  def favorite_pets
+    @contents.map do |pet_id, quantity|
+      Pet.find(pet_id)
+    end
+  end
+
   def remove_all
     @contents.each { |key, value| remove_pet(key) }
   end

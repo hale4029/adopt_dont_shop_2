@@ -1,5 +1,7 @@
- Shelter.destroy_all
- Pet.destroy_all
+ApplicationPet.destroy_all
+Shelter.destroy_all
+Pet.destroy_all
+Application.destroy_all
 
  @shelter_1 = Shelter.create(name:    "Reptile Room",
                              address: "2364 Desert Lane",
@@ -73,3 +75,13 @@
                      sex: 'male',
                      adoption_status: 'pending_adoption',
                      shelter_id: @shelter_2.id)
+
+@app_1 = Application.create(name: 'Harrison Levin',
+                            address: '1234 Lame Street',
+                            city: 'Denver',
+                            state: 'CO',
+                            zip: '80211',
+                            phone: '720-111-2222',
+                            description: 'I love all of these pets.')
+
+@app_1.pets << [@pet_1, @pet_2]

@@ -3,6 +3,7 @@
 <%= link_to "Delete All Favorited Pets", "/favorites/delete_all", method: :delete %>
 
 <div id="container">
+<h1>Favorite Pets</h1>
 <div id="pets">
   <% @pets.each do |pet| %>
     <div class="responsive" id="favorites-<%= pet.id %>" >
@@ -15,4 +16,5 @@
     </div>
   <% end %>
 </div>
+<%= button_to 'Create Application', '/applications', method: :get %>
 </div>
