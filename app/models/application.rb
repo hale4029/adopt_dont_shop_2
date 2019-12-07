@@ -10,4 +10,17 @@ class Application < ApplicationRecord
                         :phone,
                         :description,
                         :status
+
+def update_adoption_status(pets)
+  pets.each do |pet|
+    if pet.adoption_status == "adoptable"
+      status = "Pending Adoption"
+    else
+      status = "Adoptable"
+    end
+    pet.update({adoption_status: status})
+    pet.save
+  end
+end
+
 end
