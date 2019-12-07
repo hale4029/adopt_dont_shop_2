@@ -69,6 +69,9 @@ RSpec.describe "adoption application" do
       expect(page).to have_field("checkbox-#{@pet_3.id}", checked: false)
     end
 
+    find(:css, "#checkbox-#{@pet_1.id}").set(true)
+    find(:css, "#checkbox-#{@pet_2.id}").set(true)
+
     fill_in 'name', with: 'Harrison Levin'
     fill_in 'address', with: '1234 Lame Street'
     fill_in 'city', with: 'Denver'
