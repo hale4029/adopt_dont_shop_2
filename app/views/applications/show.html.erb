@@ -1,0 +1,17 @@
+<div class="page_container">
+
+<h1>Application ID: <%= @app.id %></h1>
+<p><b>Name: </b><%= @app.name %><br>
+<b>Address: </b><%= @app.address %><br>
+<b>City: </b><%= @app.city %><br>
+<b>State: </b><%= @app.state %><br>
+<b>Zip: </b><%= @app.zip %><br>
+<b>Phone: </b><%= @app.phone %><br>
+<b>Description: </b><%= @app.description %></p>
+
+<h3>Pets applied for:</h3>
+<% @app.pets.each do |pet| %>
+    <%= link_to pet.name, "/pets/#{pet.id}" %><br>
+<% end %>
+
+</div>
