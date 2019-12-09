@@ -32,4 +32,8 @@ def self.find_pets(ids)
   ids.map { |id| Pet.find(id) }
 end
 
+def self.remove_all_pets_from_favorites(pets, favorites)
+  pets.each { |pet| favorites.remove_pet(pet.id) }
+end
+
 end
