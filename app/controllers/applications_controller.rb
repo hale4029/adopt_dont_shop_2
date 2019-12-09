@@ -11,7 +11,9 @@ class ApplicationsController < ApplicationController
   def create
     app = Application.new(app_params)
     if app.save
-      pets = params[:favorite_ids].map { |id| Pet.find(id) }
+      ids = params[:favorite_ids]
+      #pets = params[:favorite_ids].map { |id| Pet.find(id) }
+      pets = Application.find_pets(ids)
       app.pets << pets
       pets.each { |pet| @favorites.remove_pet(pet.id) }
       app.update_adoption_status(pets)

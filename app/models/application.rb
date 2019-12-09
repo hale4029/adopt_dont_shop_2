@@ -28,4 +28,8 @@ def self.find_pets_in_applications
   apps.map { |app| app.pets }.flatten
 end
 
+def self.find_pets(ids)
+  ids.map { |id| Pet.find(id) }
+end
+
 end
