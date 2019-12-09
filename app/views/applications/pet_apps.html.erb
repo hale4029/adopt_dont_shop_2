@@ -2,6 +2,10 @@
 
 <h1>Applicants for <%= @pet.name %> </h1>
 
+<% if @applicants.length == 0 %>
+  <h3>No applications on file for this pet.</h3>
+<% end %>
+
 <% @applicants.each do |app| %>
 <%= link_to "#{app.name}", "/applications/#{app.id}" %>
 <% end %>
