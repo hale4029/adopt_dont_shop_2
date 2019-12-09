@@ -26,4 +26,5 @@ class Favorite
   def remove_all
     @contents.each { |key, value| remove_pet(key) }
   end
+
 end

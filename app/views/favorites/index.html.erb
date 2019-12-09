@@ -1,20 +1,39 @@
+<div class="header_show_pets">
+  <nav>
+    <li><%= link_to "Delete All Favorited Pets", "/favorites/delete_all", :class => "link_pets", method: :delete %></li>
+    <li><%= link_to 'Create Application', '/applications/new', :class => "link_pets", method: :get %></li>
+  </nav>
+</div>
+
 <nav><%= @pets.length == 0 ? "No Favorites Added" : "" %></nav>
 
-<%= link_to "Delete All Favorited Pets", "/favorites/delete_all", method: :delete %>
+<h1 id="fav_header">Favorited Pets</h1>
 
-<div id="container">
-<h1>Favorite Pets</h1>
-<div id="pets">
-  <% @pets.each do |pet| %>
-    <div class="responsive" id="favorites-<%= pet.id %>" >
-      <div class="gallery">
-        <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
-        <p><img src= <%= pet.image %>></p>
+<div id="container_fav">
+  <div id="favorited_pets">
+    <div id="favs">
+      <% @pets.each do |pet| %>
+        <div class="responsive_fav" id="favorites-<%= pet.id %>" >
+          <div class="gallery">
+            <p><a href="/pets/<%= pet.id %>"><%= pet.name %></a></p>
+            <p><img src= <%= pet.image %>></p>
 
-        <%= button_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %>
-      </div>
+            <%= button_to "Remove from Favorites", "/favorites/#{pet.id}", method: :delete %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+
+<div id="app_pets">
+  <h3 id="adp_header">Adoption Pending</h3>
+  <% @app_pets.each do |pet| %>
+    <div id="open_apps_<%= pet.id %>">
+      <%= link_to "#{pet.name}", "/pets/#{pet.id}", :class => "link_pets" %>
     </div>
   <% end %>
 </div>
-<%= button_to 'Create Application', '/applications/new', method: :get %>
+
+
 </div>

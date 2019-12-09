@@ -1,6 +1,7 @@
 class FavoritesController < ApplicationController
 
   def index
+    @app_pets = Application.find_pets_in_applications
     pet_ids = @favorites.contents.keys
     @pets = pet_ids.reduce([]) do |acc, key|
       acc << Pet.find(key.to_i)

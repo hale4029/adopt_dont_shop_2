@@ -1,0 +1,74 @@
+#container_fav {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh
+}
+
+#favorited_pets {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-left: 45px;
+}
+
+.responsive_fav {
+  padding: 20px;
+  padding-top: 30px;
+  width: 24.99999%;
+  height: 300px;
+  display: inline-grid;
+  justify-content: space-between;
+  min-width: 350px;
+}
+
+div.gallery {
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: 200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#favs {
+  display: inline-flex;
+  flex-flow: wrap;
+}
+
+#app_pets {
+  display: flex;
+  width: 350px;
+  flex-direction: column;
+  border: solid 3px black;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+div[id^="open_apps_"] {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+}
+
+#fav_header {
+  display: flex;
+  justify-content: center;
+}
+
+#adp_header {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: solid 3px black;
+}
