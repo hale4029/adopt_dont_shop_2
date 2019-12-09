@@ -25,6 +25,14 @@ RSpec.describe "Pet Application Index Page" do
                            adoption_status:     "adoptable",
                            shelter_id: @shelter_1.id)
 
+       @pet_3 = Pet.create(image:      "https://localtvwiti.files.wordpress.com/2016/06/thinkstockphotos-528306066.jpg?quality=85&strip=all&w=400&h=225&crop=1",
+                           name:       "Betsy",
+                           description:       "I'm a blue tang fish. You might recognize me from the movie 'Finding Nemo'! I require a salt water tank.",
+                           approximate_age:        "1",
+                           sex:        "female",
+                           adoption_status:     "adoptable",
+                           shelter_id: @shelter_1.id)
+
         @app_1 = Application.create(name: 'Harrison Levin',
                                     address: '1234 Lame Street',
                                     city: 'Denver',
@@ -46,7 +54,7 @@ RSpec.describe "Pet Application Index Page" do
 
   end
 
-  it "pet page has link to open applicaions for pet, link takes you to application show page" do
+  it "pet page has link to open applications for pet, link takes you to application show page" do
 
     visit "/pets/#{@pet_1.id}"
 
@@ -60,5 +68,17 @@ RSpec.describe "Pet Application Index Page" do
     click_link 'Harrison Levin'
 
     expect(current_path).to eq("/applications/#{@app_1.id}")
+  end
+
+  it "shows separate message when no applications are on file" do
+
+    visit "/pets/#{@pet_3.id}"
+
+    click_link "View Applicants"
+
+    expect(current_path). to eq("/pets/#{@pet_3.id}/applications")
+    expect(page).to have_content("Applicants for #{@pet_3.name}")
+
+    expect(page).to have_content("No applications on file for this pet.")
   end
 end
