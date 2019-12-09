@@ -28,6 +28,11 @@ class ApplicationsController < ApplicationController
     @app = Application.find(params[:id])
   end
 
+  def pet_apps
+    @pet = Pet.find(params[:id])
+    @applicants = Application.select(:name, :id).joins(:pets).where("pets.id = #{@pet.id}")
+  end
+
   private
     def app_params
       params.permit(:name,

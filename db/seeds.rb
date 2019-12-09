@@ -84,4 +84,13 @@ Application.destroy_all
                             phone: '720-111-2222',
                             description: 'I love all of these pets.')
 
+@app_2 = Application.create(name: 'Melissa Robbins',
+                            address: '3632 Mariposa Street',
+                            city: 'Denver',
+                            state: 'CO',
+                            zip: '80211',
+                            phone: '415-608-4157',
+                            description: 'I love all of these pets.')
+
 @app_1.pets << [@pet_1, @pet_2]
+@app_2.pets <<[@pet_1, @pet_7]
