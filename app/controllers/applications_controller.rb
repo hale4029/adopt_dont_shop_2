@@ -31,7 +31,7 @@ class ApplicationsController < ApplicationController
 
   def pet_apps
     @pet = Pet.find(params[:id])
-    @applicants = Application.select(:name, :id).joins(:pets).where("pets.id = #{@pet.id}")
+    @applicants = Application.find_applicant(@pet)
   end
 
   private
