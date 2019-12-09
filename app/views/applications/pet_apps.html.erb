@@ -1,0 +1,9 @@
+<div class="page_container">
+
+<h1>Applicants for <%= @pet.name %> </h1>
+
+<% @applicants.each do |app| %>
+<%= link_to "#{app.name}", "/applications/#{app.id}" %>
+<% end %>
+
+</div>

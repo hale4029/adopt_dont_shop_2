@@ -20,6 +20,7 @@
           <% else %>
               <%= link_to 'Cancel Adoption Request', "/pets/#{@pet.id}/adoptable", method: :patch %>
           <% end %><br>
+          <%= link_to 'View Applicants', "/pets/#{@pet.id}/applications" %>
           <br>
           <%= link_to 'Edit', "/pets/#{@pet.id}/edit" %><br>
           <%= link_to 'Delete', "/pets/#{@pet.id}", method: :delete %><br>
