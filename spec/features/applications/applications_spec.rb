@@ -48,7 +48,7 @@ RSpec.describe "adoption application" do
     click_button 'Favorite'
 
     visit "/favorites"
-    click_button 'Create Application'
+    click_link 'Create Application'
 
     expect(current_path).to eq("/applications/new")
 
@@ -106,7 +106,7 @@ RSpec.describe "adoption application" do
     click_button 'Favorite'
 
     visit "/favorites"
-    click_button 'Create Application'
+    click_link 'Create Application'
 
     expect(current_path).to eq("/applications/new")
 

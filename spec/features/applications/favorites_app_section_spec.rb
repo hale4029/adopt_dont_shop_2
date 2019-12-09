@@ -47,7 +47,7 @@ RSpec.describe "favorite's application section" do
     click_button 'Favorite'
 
     visit "/favorites"
-    click_button 'Create Application'
+    click_link 'Create Application'
 
     find(:css, "#checkbox-#{@pet_1.id}").set(true)
     find(:css, "#checkbox-#{@pet_2.id}").set(true)
@@ -64,11 +64,11 @@ RSpec.describe "favorite's application section" do
 
     expect(current_path).to eq('/favorites')
 
-    within "#open_apps-#{@pet_1.id}" do
+    within "#open_apps_#{@pet_1.id}" do
       expect(page).to have_content(@pet_1.name)
     end
 
-    within "#open_apps-#{@pet_2.id}" do
+    within "#open_apps_#{@pet_2.id}" do
       expect(page).to have_content(@pet_2.name)
     end
 

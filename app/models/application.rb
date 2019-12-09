@@ -23,4 +23,9 @@ def update_adoption_status(pets)
   end
 end
 
+def self.find_pets_in_applications
+  apps = Application.all
+  apps.map { |app| app.pets }.flatten
+end
+
 end
