@@ -27,8 +27,8 @@ class Favorite
     @contents.each { |key, value| remove_pet(key) }
   end
 
-  def self.find_pending_adoption_pets
-    pets_pending = ApplicationPet.where(status: "Pending Adoption")
+  def self.find_approved_adoption_pets
+    pets_pending = ApplicationPet.where(status: "Approved")
     pets_pending.map { |app_pet| Pet.find(app_pet.pet_id) }
   end
 

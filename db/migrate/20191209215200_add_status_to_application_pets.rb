@@ -1,5 +1,5 @@
 class AddStatusToApplicationPets < ActiveRecord::Migration[5.1]
   def change
-    add_column :application_pets, :status, :string, default: "Adoptable"
+    add_column :application_pets, :status, :string, default: "Pending"
   end
 end

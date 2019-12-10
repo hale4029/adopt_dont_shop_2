@@ -102,4 +102,36 @@ RSpec.describe "applications show page " do
     expect(page).to have_link(@app_1.name)
     expect(page).to have_link(@app_2.name)
   end
+
+  it "will allow a user to unapprove an application on a pet that has been approved" do
+
+    visit "/applications/#{@app_1.id}"
+
+    within "#section-#{@pet_1.id}" do
+      click_button 'Approve Application'
+    end
+
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to have_content("Adoption Status: Pending Adoption")
+    expect(page).to_not have_content("Adoption Status: Adoptable")
+    expect(page).to have_content("Pet on hold for: #{@app_1.name}")
+
+    visit "/applications/#{@app_1.id}"
+
+    within "#section-#{@pet_1.id}" do
+      click_button('Unapprove Application')
+    end
+
+    expect(current_path).to eq("/applications/#{@app_1.id}")
+
+    within "#section-#{@pet_1.id}" do
+      expect(page).to have_button('Approve Application')
+    end
+
+    visit "/pets/#{@pet_1.id}"
+
+    expect(page).to_not have_content("Adoption Status: Pending Adoption")
+    expect(page).to have_content("Adoption Status: Adoptable")
+    expect(page).to_not have_content("Pet on hold for: #{@app_1.name}")
+  end
 end

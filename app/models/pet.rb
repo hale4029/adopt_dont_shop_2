@@ -10,8 +10,11 @@ class Pet < ApplicationRecord
                         :adoption_status,
                         :description
 
-def change_adoption_status
+def change_adoption_status_to_pending
   update({adoption_status: "Pending Adoption"})
+end
+def change_adoption_status_to_adoptable
+  update({adoption_status: "Adoptable"})
 end
 
 end
