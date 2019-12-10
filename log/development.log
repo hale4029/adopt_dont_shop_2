@@ -43583,3 +43583,1949 @@ Processing by PetsController#show_pet as HTML
 Completed 200 OK in 108ms (Views: 47.2ms | ActiveRecord: 9.0ms)
 
 
+Started GET "/" for ::1 at 2019-12-10 11:57:02 -0700
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 200ms (Views: 192.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 11:57:05 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (2.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Pending Adoption"]]
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 81ms (Views: 17.2ms | ActiveRecord: 18.2ms)
+
+
+Started GET "/pets/12" for ::1 at 2019-12-10 11:57:09 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 12]]
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 5]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (1.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 83ms (Views: 34.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/pets/12/applications" for ::1 at 2019-12-10 11:57:11 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (3.9ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 12)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 47ms (Views: 37.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/applications/5" for ::1 at 2019-12-10 11:57:12 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mApplication Load (0.6ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 5]]
+  Rendered applications/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 54ms (Views: 48.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-12-10 12:00:54 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 175ms (Views: 168.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 12:00:55 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.7ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Pending Adoption"]]
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 82ms (Views: 22.7ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/pets/12" for ::1 at 2019-12-10 12:00:56 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.5ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 12]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 5]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 86ms (Views: 36.5ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/pets/12/applications" for ::1 at 2019-12-10 12:00:58 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (1.1ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 12)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 54ms (Views: 44.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/applications/5" for ::1 at 2019-12-10 12:00:59 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 5]]
+  Rendered applications/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 50ms (Views: 44.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (238.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_development"[0m
+  [1m[35m (225.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_test"[0m
+  [1m[35m (531.0ms)[0m  [1m[35mCREATE DATABASE "adopt_dont_shop_development" ENCODING = 'unicode'[0m
+  [1m[35m (381.0ms)[0m  [1m[35mCREATE DATABASE "adopt_dont_shop_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5022504912090105405)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShelter (20191119235540)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119235540"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePets (20191122001659)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "image" bytea, "name" character varying, "approximate_age" integer, "sex" character varying, "shelter_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_shelter_id" ON "pets"  ("shelter_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191122001659"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdoptionStatusToPets (20191123191924)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pets" ADD "adoption_status" character varying DEFAULT 'Adoptable'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191123191924"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToPets (20191123194032)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pets" ADD "description" character varying DEFAULT 'Add description'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191123194032"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20191203020949)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "title" character varying, "rating" integer, "content" character varying, "picture" bytea DEFAULT '\x', "shelter_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_131565a078"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_shelter_id" ON "reviews"  ("shelter_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191203020949"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApplications (20191207192935)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "applications" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" character varying, "phone" character varying, "description" character varying, "status" character varying DEFAULT 'Pending Adoption', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191207192935"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApplicationPets (20191207195428)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "application_pets" ("id" bigserial primary key, "application_id" bigint, "pet_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6ac8983e3b"
+FOREIGN KEY ("application_id")
+  REFERENCES "applications" ("id")
+, CONSTRAINT "fk_rails_412710cd26"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_application_pets_on_application_id" ON "application_pets"  ("application_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_application_pets_on_pet_id" ON "application_pets"  ("pet_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191207195428"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveStatusFromApplications (20191209215055)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "applications" DROP "status"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209215055"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStatusToApplicationPets (20191209215200)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "application_pets" ADD "status" character varying DEFAULT 'Pending Adoption'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209215200"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-10 21:18:55.645885"], ["updated_at", "2019-12-10 21:18:55.645885"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5022504912090105405)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets"[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Reptile Room"], ["address", "2364 Desert Lane"], ["city", "Denver"], ["state", "CO"], ["zip", 80211], ["created_at", "2019-12-10 21:18:55.721556"], ["updated_at", "2019-12-10 21:18:55.721556"]]
+  [1m[35m (32.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fish Farm"], ["address", "8473 Ocean Drive"], ["city", "Denver"], ["state", "CO"], ["zip", 80232], ["created_at", "2019-12-10 21:18:55.756115"], ["updated_at", "2019-12-10 21:18:55.756115"]]
+  [1m[35m (31.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Aviary"], ["address", "27 Skylark Drive"], ["city", "Denver"], ["state", "CO"], ["zip", 80215], ["created_at", "2019-12-10 21:18:55.788646"], ["updated_at", "2019-12-10 21:18:55.788646"]]
+  [1m[35m (32.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<73 bytes of binary data>"], ["name", "Alfredo"], ["approximate_age", 4], ["sex", "female"], ["shelter_id", 1], ["created_at", "2019-12-10 21:18:55.846853"], ["updated_at", "2019-12-10 21:18:55.846853"], ["description", "I'm a white ball python!"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<77 bytes of binary data>"], ["name", "Poppy"], ["approximate_age", 2], ["sex", "male"], ["shelter_id", 1], ["created_at", "2019-12-10 21:18:55.849733"], ["updated_at", "2019-12-10 21:18:55.849733"], ["description", "I'm a panther chameleon! I am not very social but am fun to look at."]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<118 bytes of binary data>"], ["name", "Betsy"], ["approximate_age", 1], ["sex", "female"], ["shelter_id", 2], ["created_at", "2019-12-10 21:18:55.852104"], ["updated_at", "2019-12-10 21:18:55.852104"], ["description", "I'm a blue tang fish. You might recognize me from the movie 'Finding Nemo'! I require a salt water tank."]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<72 bytes of binary data>"], ["name", "Chive"], ["approximate_age", 5], ["sex", "male"], ["shelter_id", 1], ["created_at", "2019-12-10 21:18:55.857284"], ["updated_at", "2019-12-10 21:18:55.857284"], ["description", "I'm a bearded dragon. I like to hunt and be active during the daytime."]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<77 bytes of binary data>"], ["name", "Charlene"], ["approximate_age", 3], ["sex", "female"], ["shelter_id", 3], ["created_at", "2019-12-10 21:18:55.859326"], ["updated_at", "2019-12-10 21:18:55.859326"], ["description", "I'm a lonely lovebird looking for a new home."]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<93 bytes of binary data>"], ["name", "Zoe"], ["approximate_age", 8], ["sex", "female"], ["shelter_id", 3], ["created_at", "2019-12-10 21:18:55.861345"], ["updated_at", "2019-12-10 21:18:55.861345"], ["description", "I'm smart and sassy. Watch out."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<98 bytes of binary data>"], ["name", "Fancy"], ["approximate_age", 5], ["sex", "female"], ["shelter_id", 2], ["created_at", "2019-12-10 21:18:55.863453"], ["updated_at", "2019-12-10 21:18:55.863453"], ["description", "I'm a starfish looking for a saltwater home."]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<79 bytes of binary data>"], ["name", "Pumpkin"], ["approximate_age", 3], ["sex", "male"], ["shelter_id", 2], ["created_at", "2019-12-10 21:18:55.865356"], ["updated_at", "2019-12-10 21:18:55.865356"], ["description", "No, I was not in 'Finding Nemo' and yes, I am the same type of fish."]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (207.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_development"[0m
+  [1m[35m (203.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "adopt_dont_shop_test"[0m
+  [1m[35m (388.4ms)[0m  [1m[35mCREATE DATABASE "adopt_dont_shop_development" ENCODING = 'unicode'[0m
+  [1m[35m (438.1ms)[0m  [1m[35mCREATE DATABASE "adopt_dont_shop_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5022504912090105405)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateShelter (20191119235540)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "shelters" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191119235540"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePets (20191122001659)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "pets" ("id" bigserial primary key, "image" bytea, "name" character varying, "approximate_age" integer, "sex" character varying, "shelter_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_92fb5d7a05"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_pets_on_shelter_id" ON "pets"  ("shelter_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191122001659"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdoptionStatusToPets (20191123191924)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "pets" ADD "adoption_status" character varying DEFAULT 'Adoptable'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191123191924"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDescriptionToPets (20191123194032)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "pets" ADD "description" character varying DEFAULT 'Add description'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191123194032"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateReviews (20191203020949)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" bigserial primary key, "title" character varying, "rating" integer, "content" character varying, "picture" bytea DEFAULT '\x', "shelter_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_131565a078"
+FOREIGN KEY ("shelter_id")
+  REFERENCES "shelters" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_shelter_id" ON "reviews"  ("shelter_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191203020949"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApplications (20191207192935)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "applications" ("id" bigserial primary key, "name" character varying, "address" character varying, "city" character varying, "state" character varying, "zip" character varying, "phone" character varying, "description" character varying, "status" character varying DEFAULT 'Pending Adoption', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191207192935"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateApplicationPets (20191207195428)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "application_pets" ("id" bigserial primary key, "application_id" bigint, "pet_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_6ac8983e3b"
+FOREIGN KEY ("application_id")
+  REFERENCES "applications" ("id")
+, CONSTRAINT "fk_rails_412710cd26"
+FOREIGN KEY ("pet_id")
+  REFERENCES "pets" ("id")
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_application_pets_on_application_id" ON "application_pets"  ("application_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE  INDEX  "index_application_pets_on_pet_id" ON "application_pets"  ("pet_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191207195428"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to RemoveStatusFromApplications (20191209215055)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "applications" DROP "status"[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209215055"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddStatusToApplicationPets (20191209215200)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "application_pets" ADD "status" character varying DEFAULT 'Pending'[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191209215200"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-10 21:24:13.868556"], ["updated_at", "2019-12-10 21:24:13.868556"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5022504912090105405)[0m
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets"[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT "shelters".* FROM "shelters"[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets"[0m
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications".* FROM "applications"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Reptile Room"], ["address", "2364 Desert Lane"], ["city", "Denver"], ["state", "CO"], ["zip", 80211], ["created_at", "2019-12-10 21:24:13.969585"], ["updated_at", "2019-12-10 21:24:13.969585"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fish Farm"], ["address", "8473 Ocean Drive"], ["city", "Denver"], ["state", "CO"], ["zip", 80232], ["created_at", "2019-12-10 21:24:13.971499"], ["updated_at", "2019-12-10 21:24:13.971499"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "shelters" ("name", "address", "city", "state", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "The Aviary"], ["address", "27 Skylark Drive"], ["city", "Denver"], ["state", "CO"], ["zip", 80215], ["created_at", "2019-12-10 21:24:13.973009"], ["updated_at", "2019-12-10 21:24:13.973009"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.6ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<73 bytes of binary data>"], ["name", "Alfredo"], ["approximate_age", 4], ["sex", "female"], ["shelter_id", 1], ["created_at", "2019-12-10 21:24:13.999246"], ["updated_at", "2019-12-10 21:24:13.999246"], ["description", "I'm a white ball python!"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<77 bytes of binary data>"], ["name", "Poppy"], ["approximate_age", 2], ["sex", "male"], ["shelter_id", 1], ["created_at", "2019-12-10 21:24:14.002404"], ["updated_at", "2019-12-10 21:24:14.002404"], ["description", "I'm a panther chameleon! I am not very social but am fun to look at."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<118 bytes of binary data>"], ["name", "Betsy"], ["approximate_age", 1], ["sex", "female"], ["shelter_id", 2], ["created_at", "2019-12-10 21:24:14.004680"], ["updated_at", "2019-12-10 21:24:14.004680"], ["description", "I'm a blue tang fish. You might recognize me from the movie 'Finding Nemo'! I require a salt water tank."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<72 bytes of binary data>"], ["name", "Chive"], ["approximate_age", 5], ["sex", "male"], ["shelter_id", 1], ["created_at", "2019-12-10 21:24:14.006862"], ["updated_at", "2019-12-10 21:24:14.006862"], ["description", "I'm a bearded dragon. I like to hunt and be active during the daytime."]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<77 bytes of binary data>"], ["name", "Charlene"], ["approximate_age", 3], ["sex", "female"], ["shelter_id", 3], ["created_at", "2019-12-10 21:24:14.008880"], ["updated_at", "2019-12-10 21:24:14.008880"], ["description", "I'm a lonely lovebird looking for a new home."]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<93 bytes of binary data>"], ["name", "Zoe"], ["approximate_age", 8], ["sex", "female"], ["shelter_id", 3], ["created_at", "2019-12-10 21:24:14.010973"], ["updated_at", "2019-12-10 21:24:14.010973"], ["description", "I'm smart and sassy. Watch out."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<98 bytes of binary data>"], ["name", "Fancy"], ["approximate_age", 5], ["sex", "female"], ["shelter_id", 2], ["created_at", "2019-12-10 21:24:14.012930"], ["updated_at", "2019-12-10 21:24:14.012930"], ["description", "I'm a starfish looking for a saltwater home."]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "pets" ("image", "name", "approximate_age", "sex", "shelter_id", "created_at", "updated_at", "description") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["image", "<79 bytes of binary data>"], ["name", "Pumpkin"], ["approximate_age", 3], ["sex", "male"], ["shelter_id", 2], ["created_at", "2019-12-10 21:24:14.014948"], ["updated_at", "2019-12-10 21:24:14.014948"], ["description", "No, I was not in 'Finding Nemo' and yes, I am the same type of fish."]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-12-10 14:35:24 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 182ms (Views: 175.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-10 14:35:33 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.1ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 71ms (Views: 47.6ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:35:35 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.5ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 37ms (Views: 17.6ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-10 14:35:37 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"2dPpuWVypYL77Tp/Qp7N5iUeomNlBE6ekjhdf36SPE7CoP2c/GD+rEwfI8gPPGr32FJrLhGIBU3ZLLpJtxaLtw==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:35:37 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 14:35:39 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.9ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 19.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/applications/new" for ::1 at 2019-12-10 14:35:41 -0700
+Processing by ApplicationsController#new as HTML
+  Parameters: {"authenticity_token"=>"lLBbjNE1ZzEa6p7ix6NhZv+XVn/Evqk7hWqTKBempW6Pw0+pSCc8H60Yh1WKAcZ3AtufMrAy4ujOfnQe3iISlw=="}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/new.html.erb within layouts/application
+  Rendered applications/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/applications" for ::1 at 2019-12-10 14:35:50 -0700
+Processing by ApplicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tr3gDqCp7F5HYVBiPXghGri7rU/jg1NqI/TvryqDL3+tzvQrObu3cPCTSdVw2oYLRfdkApcPGLlo4AiZ4weYhg==", "favorite_ids"=>["2"], "name"=>"Denver House", "address"=>"125 Denver", "city"=>"CO", "state"=>"Denver", "zip"=>"80122", "phone"=>"123123", "description"=>"hello", "commit"=>"Submit"}
+Unpermitted parameters: :utf8, :authenticity_token, :favorite_ids, :commit
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "applications" ("name", "address", "city", "state", "zip", "phone", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Denver House"], ["address", "125 Denver"], ["city", "CO"], ["state", "Denver"], ["zip", "80122"], ["phone", "123123"], ["description", "hello"], ["created_at", "2019-12-10 21:35:50.774368"], ["updated_at", "2019-12-10 21:35:50.774368"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "application_pets" ("application_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["application_id", 1], ["pet_id", 2], ["created_at", "2019-12-10 21:35:50.789358"], ["updated_at", "2019-12-10 21:35:50.789358"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 33ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 14:35:50 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 17.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-10 14:35:56 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:36:00 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 30.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 14:36:03 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (0.6ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 34ms (Views: 28.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 14:36:04 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 32ms (Views: 26.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 14:39:55 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (47.9ms)
+Completed 200 OK in 201ms (Views: 168.9ms | ActiveRecord: 7.0ms)
+
+
+Started PATCH "/pets/2/applications/1" for ::1 at 2019-12-10 14:40:00 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"vu8TWEED/n2kUjdaep+Bci/JXwn5RLiyKtfaGvBTQoelnAd92BGlUxOgLu03PSZj0oWWRI3I82Fhwz0sOdf1fg==", "pet_id"=>"2", "app_id"=>"1"}
+  [1m[36mApplicationPet Load (0.6ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "application_pets" SET "status" = $1, "updated_at" = $2 WHERE "application_pets"."id" = $3[0m  [["status", "Approved"], ["updated_at", "2019-12-10 21:40:00.199127"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", "Pending Adoption"], ["updated_at", "2019-12-10 21:40:00.215156"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 43ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:40:00 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.1ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 14:40:03 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (0.6ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 23ms (Views: 18.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 14:40:04 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.5ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:40:09 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 26ms (Views: 19.2ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/favorites/2" for ::1 at 2019-12-10 14:40:11 -0700
+Processing by FavoritesController#update as HTML
+  Parameters: {"authenticity_token"=>"KYIT6bCKu4g+p7JoSAr3s+isZ9wC5Ffl6UNpovSCeuMy8QfMKZjgpolVq98FqFCiFeCukXZoHDaiV46UPQbNGg==", "id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:40:11 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-10 14:40:12 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 28ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 14:40:17 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.5ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Pet Load (0.1ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 24ms (Views: 18.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:40:19 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 35.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 14:40:24 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Pet Load (0.0ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 25ms (Views: 19.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/applications/new" for ::1 at 2019-12-10 14:40:25 -0700
+Processing by ApplicationsController#new as HTML
+  Parameters: {"authenticity_token"=>"WCMo8hm7b5AzE01Ppd4iISUTBSZesPlOJImmQzFf6ppDUDzXgKk0voThVPjofIUw2F/Mayo8sp1vnUF1+NtdYw=="}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/new.html.erb within layouts/application
+  Rendered applications/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 20.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/applications" for ::1 at 2019-12-10 14:40:35 -0700
+Processing by ApplicationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nB/rafokcLddJA9259LyH1KRJ2FECCWqxEVz7QzVp0iHbP9MYzYrmerWFsGqcFUOr93uLDCEbnmPUZTbxVEQsQ==", "favorite_ids"=>["2"], "name"=>"Denver", "address"=>"125 Denver", "city"=>"CO", "state"=>"Denver", "zip"=>"80122", "phone"=>"aqsdf", "description"=>"adsf", "commit"=>"Submit"}
+Unpermitted parameters: :utf8, :authenticity_token, :favorite_ids, :commit
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "applications" ("name", "address", "city", "state", "zip", "phone", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Denver"], ["address", "125 Denver"], ["city", "CO"], ["state", "Denver"], ["zip", "80122"], ["phone", "aqsdf"], ["description", "adsf"], ["created_at", "2019-12-10 21:40:35.659910"], ["updated_at", "2019-12-10 21:40:35.659910"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "application_pets" ("application_id", "pet_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["application_id", 2], ["pet_id", 2], ["created_at", "2019-12-10 21:40:35.665511"], ["updated_at", "2019-12-10 21:40:35.665511"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/favorites
+Completed 302 Found in 11ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 14:40:35 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  [1m[36mPet Load (0.1ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:40:38 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 30ms (Views: 21.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 14:40:41 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 28ms (Views: 23.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/applications/2" for ::1 at 2019-12-10 14:40:43 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 2]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 2)[0m
+  Rendered applications/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 28.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 14:40:49 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 22.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/applications/2" for ::1 at 2019-12-10 14:40:54 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 2]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 2)[0m
+  Rendered applications/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 14:43:16 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 31ms (Views: 26.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:43:18 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 32ms (Views: 23.6ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/pets/2/applications/1" for ::1 at 2019-12-10 14:43:26 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"s4C46QRiwWiK4Mpl5f3nh1XgOMyhB0t3p1uzwZ7G9R2o86zMnXCaRj0S09KoX0CWqKzxgdWLAKTsT1T3V0JC5A==", "pet_id"=>"2", "app_id"=>"1"}
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 22ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:43:26 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:43:30 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 25ms (Views: 18.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 14:43:38 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 26ms (Views: 20.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:43:43 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 25ms (Views: 18.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 14:46:33 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.5ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 19.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:06:47 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 228ms (Views: 152.2ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 15:06:57 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.7ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 15.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:06:58 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.7ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 33ms (Views: 24.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 15:06:59 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (1.3ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 29ms (Views: 23.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 15:07:00 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 27ms (Views: 21.8ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/pets/2/applications/1" for ::1 at 2019-12-10 15:07:02 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"LmtXiIIqPJph97CxsQ+uew420MRWEqUF/qz3ULh0spg1GEOtGzhntNYFqQb8rQlq83oZiSKe7ta1uBBmcfAFYQ==", "pet_id"=>"2", "app_id"=>"1"}
+Completed 500 Internal Server Error in 27446ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/application_pets_controller.rb:4:in `update'
+Started PATCH "/pets/2/applications/1" for ::1 at 2019-12-10 15:08:49 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"LmtXiIIqPJph97CxsQ+uew420MRWEqUF/qz3ULh0spg1GEOtGzhntNYFqQb8rQlq83oZiSKe7ta1uBBmcfAFYQ==", "pet_id"=>"2", "app_id"=>"1"}
+Completed 500 Internal Server Error in 91033ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/application_pets_controller.rb:4:in `update'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:10:27 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.7ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 228ms (Views: 189.1ms | ActiveRecord: 14.5ms)
+
+
+Started PATCH "/pets/2/applications/1/app_pet?status=false" for ::1 at 2019-12-10 15:10:28 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/app_pet"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:12:44 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 55ms (Views: 32.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/applications" for ::1 at 2019-12-10 15:13:12 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/applications"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:13:18 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 195ms (Views: 155.3ms | ActiveRecord: 14.1ms)
+
+
+Started PATCH "/pets/2/applications/1/app_pet?status=false" for ::1 at 2019-12-10 15:13:20 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/app_pet"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:16:33 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 210ms (Views: 175.8ms | ActiveRecord: 8.3ms)
+
+
+Started PATCH "/pets/2/applications/1/app_pet?testing=false" for ::1 at 2019-12-10 15:16:37 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/app_pet"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:17:08 -0700
+Started PATCH "/pets/2/applications/1/app_pet?testing=false" for ::1 at 2019-12-10 15:17:18 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 46ms (Views: 31.9ms | ActiveRecord: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/app_pet"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:19:34 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 63ms (Views: 41.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/applications/2" for ::1 at 2019-12-10 15:19:37 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApplication Load (0.9ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.9ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 2]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 2)[0m
+  Rendered applications/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 29ms (Views: 22.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 15:19:40 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 37ms (Views: 30.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:19:41 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:20:52 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:22:29 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 52ms (Views: 36.5ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:22:30 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:23:56 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:23:58 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 53ms (Views: 38.5ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/pets/2/applications/1-application_pets?status=false" for ::1 at 2019-12-10 15:24:00 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"NqF3/Ziut2sfW/pfo3eHsfXRClLtT3/kuqGuk1EqMO4t0mPYAbzsRaip4+ju1SCgCJ3DH5nDNDfxtUmlmK6HFw==", "status"=>"false", "pet_id"=>"2", "app_id"=>"1-application_pets"}
+  [1m[36mApplicationPet Load (2.7ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1-application_pets)[0m
+Completed 500 Internal Server Error in 17386ms (ActiveRecord: 2.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedFunction: ERROR:  operator does not exist: integer - application_pets
+LINE 1: ...ion_pets" WHERE (pet_id = 2 AND application_id = 1-applicati...
+                                                             ^
+HINT:  No operator matches the given name and argument types. You might need to add explicit type casts.
+: SELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1-application_pets)):
+  
+app/models/application_pet.rb:14:in `pending_status'
+app/controllers/application_pets_controller.rb:6:in `update'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:26:24 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 67ms (Views: 46.6ms | ActiveRecord: 6.4ms)
+
+
+Started PATCH "/pets/2/applications/1-application_pets?status=false" for ::1 at 2019-12-10 15:26:26 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1-application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:27:00 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 25ms (Views: 20.5ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:27:02 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/pets" for ::1 at 2019-12-10 15:27:09 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 42ms (Views: 36.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/pets?adoptable=false" for ::1 at 2019-12-10 15:27:10 -0700
+Processing by PetsController#index as HTML
+  Parameters: {"adoptable"=>"false"}
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."adoption_status" = $1[0m  [["adoption_status", "Pending Adoption"]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-10 15:27:19 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pets?adoptable=false" for ::1 at 2019-12-10 15:27:21 -0700
+Processing by PetsController#index as HTML
+  Parameters: {"adoptable"=>"false"}
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."adoption_status" = $1[0m  [["adoption_status", "Pending Adoption"]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 32ms (Views: 28.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:27:22 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 19.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 15:27:23 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (1.3ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 15:27:24 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 24ms (Views: 19.1ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:27:27 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:28:28 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 48ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/pets/2/applications/1/application_pets?status=false" for ::1 at 2019-12-10 15:28:30 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1/application_pets"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:32:35 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 55ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/pets/2/applications/1?status=false" for ::1 at 2019-12-10 15:32:37 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/pets/2/applications/1"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:36:05 -0700
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  Rendered applications/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 3.6ms)
+
+
+  
+SyntaxError (/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/views/applications/show.html.erb:31: unterminated string meets end of file
+          end
+             ^
+/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/views/applications/show.html.erb:31: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/applications/show.html.erb:31: unterminated string meets end of file
+app/views/applications/show.html.erb:31: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:36:52 -0700
+Started GET "/applications/1" for ::1 at 2019-12-10 15:37:02 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  Rendered applications/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/views/applications/show.html.erb:31: unterminated string meets end of file
+          end
+             ^
+/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/views/applications/show.html.erb:31: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/applications/show.html.erb:31: unterminated string meets end of file
+app/views/applications/show.html.erb:31: syntax error, unexpected end-of-input, expecting ')'
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  Rendered applications/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/views/applications/show.html.erb:31: unterminated string meets end of file
+          end
+             ^
+/Users/hlevin/turing/mod_2/adopt_dont_shop_paired/app/views/applications/show.html.erb:31: syntax error, unexpected end-of-input, expecting ')'
+          end
+             ^):
+  
+app/views/applications/show.html.erb:31: unterminated string meets end of file
+app/views/applications/show.html.erb:31: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/applications/1" for ::1 at 2019-12-10 15:37:39 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.9ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.7ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.6ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 232ms (Views: 219.4ms | ActiveRecord: 8.9ms)
+
+
+Started PATCH "/pets/2/applications/1?status=false" for ::1 at 2019-12-10 15:37:41 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"w1fbkjclwbYVAaWi1b2jS7ubm71AHB5l/zOH1Z/AfqjYJM+3rjeamKLzvBWYHwRaRtdS8DSQVba0J2DjVkTJUQ==", "status"=>"false", "pet_id"=>"2", "app_id"=>"1"}
+  [1m[36mApplicationPet Load (0.9ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "application_pets" SET "status" = $1, "updated_at" = $2 WHERE "application_pets"."id" = $3[0m  [["status", "Pending"], ["updated_at", "2019-12-10 22:38:00.757838"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", "Adoptable"], ["updated_at", "2019-12-10 22:38:00.780768"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 19671ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:38:00 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.1ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  [1m[36mCACHE Application Load (0.0ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 18.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 15:38:13 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (1.7ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 27ms (Views: 20.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 15:38:14 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 22ms (Views: 17.5ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/pets/2/applications/1" for ::1 at 2019-12-10 15:38:17 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"kI09twv1WSsoP7DIjbBwitmoPP0FqoNAtmSgm3q7APWL/imSkucCBZ/NqX/AEtebJOT1sHEmyJP9cEetsz+3DA==", "pet_id"=>"2", "app_id"=>"1"}
+  [1m[36mApplicationPet Load (0.5ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplication Load (0.4ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "application_pets" SET "status" = $1, "updated_at" = $2 WHERE "application_pets"."id" = $3[0m  [["status", "Approved"], ["updated_at", "2019-12-10 22:38:21.149644"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", "Pending Adoption"], ["updated_at", "2019-12-10 22:38:21.155345"], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 4019ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:38:21 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.3ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 16.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shelters/1" for ::1 at 2019-12-10 15:38:25 -0700
+Processing by SheltersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering shelters/show.html.erb within layouts/application
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."shelter_id" = $1[0m  [["shelter_id", 1]]
+  Rendered shelters/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/shelters/1/pets" for ::1 at 2019-12-10 15:38:27 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"shelter_id"=>"1"}
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Load (0.6ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1 ORDER BY "pets"."adoption_status" ASC[0m  [["shelter_id", 1]]
+  Rendered pets/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 25ms (Views: 19.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shelters/1/pets" for ::1 at 2019-12-10 15:38:33 -0700
+Processing by PetsController#show as HTML
+  Parameters: {"shelter_id"=>"1"}
+  [1m[36mShelter Load (0.4ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering pets/show.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" WHERE "pets"."shelter_id" = $1 ORDER BY "pets"."adoption_status" ASC[0m  [["shelter_id", 1]]
+  Rendered pets/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 15:38:37 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:38:38 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" = $1[0m  [["id", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 26ms (Views: 18.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 15:38:39 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 15:38:40 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 27ms (Views: 21.7ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/pets/2/applications/1?status=false" for ::1 at 2019-12-10 15:38:41 -0700
+Processing by ApplicationPetsController#update as HTML
+  Parameters: {"authenticity_token"=>"hlbUDWiHWYVnX9UhFf/0pu2NwhQTiADIv8pZnqwPR+udJcAo8ZUCq9CtzJZYXVO3EMELWWcESxv03r6oZYvwEg==", "status"=>"false", "pet_id"=>"2", "app_id"=>"1"}
+  [1m[36mApplicationPet Load (0.4ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND application_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "application_pets" SET "status" = $1, "updated_at" = $2 WHERE "application_pets"."id" = $3[0m  [["status", "Pending"], ["updated_at", "2019-12-10 22:38:45.189641"], ["id", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "pets" SET "adoption_status" = $1, "updated_at" = $2 WHERE "pets"."id" = $3[0m  [["adoption_status", "Adoptable"], ["updated_at", "2019-12-10 22:38:45.194071"], ["id", 2]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/pets/2
+Completed 302 Found in 3687ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:38:45 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.2ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  [1m[36mCACHE Application Load (0.0ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/favorites" for ::1 at 2019-12-10 15:38:56 -0700
+Processing by FavoritesController#index as HTML
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."status" = $1[0m  [["status", "Approved"]]
+  Rendering favorites/index.html.erb within layouts/application
+  Rendered favorites/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 19.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/pets" for ::1 at 2019-12-10 15:38:59 -0700
+Processing by PetsController#index as HTML
+  Rendering pets/index.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" ORDER BY "pets"."adoption_status" ASC[0m
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Shelter Load (0.0ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 31ms (Views: 26.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/pets/2" for ::1 at 2019-12-10 15:39:02 -0700
+Processing by PetsController#show_pet as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE "application_pets"."pet_id" = $1[0m  [["pet_id", 2]]
+  [1m[36mApplication Load (0.2ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  [1m[36mCACHE Application Load (0.0ms)[0m  [1m[34mSELECT "applications"."name" FROM "applications" WHERE "applications"."id" IS NULL[0m
+  Rendering pets/show_pet.html.erb within layouts/application
+  [1m[36mShelter Load (0.2ms)[0m  [1m[34mSELECT  "shelters".* FROM "shelters" WHERE "shelters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered pets/show_pet.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 25.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/pets/2/applications" for ::1 at 2019-12-10 15:39:03 -0700
+Processing by ApplicationsController#pet_apps as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPet Load (0.5ms)[0m  [1m[34mSELECT  "pets".* FROM "pets" WHERE "pets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/pet_apps.html.erb within layouts/application
+  [1m[36mApplication Load (0.5ms)[0m  [1m[34mSELECT "applications"."name", "applications"."id" FROM "applications" INNER JOIN "application_pets" ON "application_pets"."application_id" = "applications"."id" INNER JOIN "pets" ON "pets"."id" = "application_pets"."pet_id" WHERE (pets.id = 2)[0m
+  Rendered applications/pet_apps.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 17.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/applications/1" for ::1 at 2019-12-10 15:39:04 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.3ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 1]]
+  [1m[36mApplicationPet Load (0.2ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 1)[0m
+  Rendered applications/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/applications/2" for ::1 at 2019-12-10 15:39:09 -0700
+Processing by ApplicationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT  "applications".* FROM "applications" WHERE "applications"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering applications/show.html.erb within layouts/application
+  [1m[36mPet Load (0.4ms)[0m  [1m[34mSELECT "pets".* FROM "pets" INNER JOIN "application_pets" ON "pets"."id" = "application_pets"."pet_id" WHERE "application_pets"."application_id" = $1[0m  [["application_id", 2]]
+  [1m[36mApplicationPet Load (0.3ms)[0m  [1m[34mSELECT "application_pets".* FROM "application_pets" WHERE (pet_id = 2 AND status = 'Approved' AND application_id = 2)[0m
+  Rendered applications/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 1.0ms)
+
+

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
+patch '/pets/:pet_id/applications/:app_id?status=false', to: 'application_pets#update'
 get '/', to: 'welcome#index'
 get '/pets', to: 'pets#index'
 get '/pets?adoptable=true', to: 'pets#index'
@@ -42,11 +42,14 @@ get '/favorites', to: 'favorites#index'
 delete '/favorites/delete_all', to: 'favorites#destroy_all'
 delete '/favorites/:id', to: 'favorites#destroy'
 
+patch '/pets/:pet_id/applications/:app_id', to: 'application_pets#update'
+
 get '/applications/new', to: 'applications#new'
 get '/applications/:id', to: 'applications#show'
 post '/applications', to: 'applications#create'
 get '/pets/:id/applications', to: 'applications#pet_apps'
-patch '/pets/:pet_id/applications/:app_id/', to: 'application_pets#update'
+
+
 
 
 

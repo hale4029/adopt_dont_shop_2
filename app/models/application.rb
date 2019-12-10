@@ -27,4 +27,9 @@ class Application < ApplicationRecord
     app_ids.map { |id| Application.select(:name).where(id: id) }
   end
 
+  def button_logic(pet, app_id)
+    application_pet_status = ApplicationPet.where("pet_id = #{pet.id} AND status = 'Approved' AND application_id = #{app_id}")
+    application_pet_status.length > 0 ? true : false
+  end
+
 end
