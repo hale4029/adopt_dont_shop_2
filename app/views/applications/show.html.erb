@@ -11,7 +11,10 @@
 
 <h3>Pets applied for:</h3>
 <% @app.pets.each do |pet| %>
+  <section id="section-<%= pet.id %>">
     <%= link_to pet.name, "/pets/#{pet.id}" %><br>
+    <%= button_to 'Approve Application', "/pets/#{pet.id}/applications/#{@app.id}", method: :patch %><br>
+  </section>
 <% end %>
 
 </div>

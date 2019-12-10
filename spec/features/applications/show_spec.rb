@@ -55,4 +55,18 @@ RSpec.describe "applications show page " do
 
     expect(current_path).to eq("/pets/#{@pet_1.id}")
   end
+
+  it "shows link to approve application for each pet" do
+
+    visit "/applications/#{@app_1.id}"
+
+    within "#section-#{@pet_1.id}" do
+      click_button 'Approve Application'
+    end
+
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to have_content("Adoption Status: Pending Adoption")
+    expect(page).to_not have_content("Adoption Status: Adoptable")
+    expect(page).to have_content("Pet on hold for #{@app_1.name}")
+  end
 end

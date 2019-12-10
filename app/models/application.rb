@@ -8,20 +8,19 @@ class Application < ApplicationRecord
                         :state,
                         :zip,
                         :phone,
-                        :description,
-                        :status
+                        :description
 
-  def update_adoption_status(pets)
-    pets.each do |pet|
-      if pet.adoption_status == "adoptable"
-        status = "Pending Adoption"
-      else
-        status = "Adoptable"
-      end
-      pet.update({adoption_status: status})
-      pet.save
-    end
-  end
+  # def update_adoption_status(pets)
+  #   pets.each do |pet|
+  #     if pet.adoption_status == "adoptable"
+  #       status = "Pending Adoption"
+  #     else
+  #       status = "Adoptable"
+  #     end
+  #     pet.update({adoption_status: status})
+  #     pet.save
+  #   end
+  # end
 
   def self.find_pets_in_applications
     apps = Application.all

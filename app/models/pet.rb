@@ -9,4 +9,9 @@ class Pet < ApplicationRecord
                         :sex,
                         :adoption_status,
                         :description
+
+def change_adoption_status
+  update({adoption_status: "Pending Adoption"})
+end
+
 end

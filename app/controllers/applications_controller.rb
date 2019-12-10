@@ -1,7 +1,6 @@
 class ApplicationsController < ApplicationController
 
   def index
-    @apps = Application.all
   end
 
   def new
@@ -11,11 +10,10 @@ class ApplicationsController < ApplicationController
   def create
     app = Application.new(app_params)
     if app.save
-      ids = params[:favorite_ids]
-      pets = Application.find_pets(ids)
+      pets = params[:favorite_ids].map { |id| Pet.find(id) }
       app.pets << pets
-      Application.remove_all_pets_from_favorites(pets, @favorites)
-      app.update_adoption_status(pets)
+      pets.each { |pet| @favorites.remove_pet(pet.id) }
+      #app.update_adoption_status(pets)
       flash[:success] = "Your application was submitted."
       redirect_to "/favorites"
     else
@@ -27,11 +25,6 @@ class ApplicationsController < ApplicationController
 
   def show
     @app = Application.find(params[:id])
-  end
-
-  def pet_apps
-    @pet = Pet.find(params[:id])
-    @applicants = Application.find_applicant(@pet)
   end
 
   private

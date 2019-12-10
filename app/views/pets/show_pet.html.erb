@@ -15,11 +15,6 @@
 
           <br>
           <br>
-          <% if @pet.adoption_status == "adoptable" %>
-              <%= link_to 'Submit Adoption Request', "/pets/#{@pet.id}/pending", method: :patch %>
-          <% else %>
-              <%= link_to 'Cancel Adoption Request', "/pets/#{@pet.id}/adoptable", method: :patch %>
-          <% end %><br>
           <%= link_to 'View Applicants', "/pets/#{@pet.id}/applications" %>
           <br>
           <%= link_to 'Edit', "/pets/#{@pet.id}/edit" %><br>

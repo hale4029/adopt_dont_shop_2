@@ -9,7 +9,6 @@ describe Application, type: :model do
     it { should validate_presence_of :zip }
     it { should validate_presence_of :phone }
     it { should validate_presence_of :description }
-    it { should validate_presence_of :status }
   end
 
   describe "relationships" do
@@ -51,11 +50,7 @@ describe Application, type: :model do
                          shelter_id: @shelter_1.id)
 
       pets = [@pet_1, @pet_2]
-
-      @app_1.update_adoption_status(pets)
-
-      expect(@pet_1.adoption_status).to eq("Pending Adoption")
-      expect(@pet_2.adoption_status).to eq("Pending Adoption")
+      
     end
   end
 end

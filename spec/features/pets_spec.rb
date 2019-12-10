@@ -155,35 +155,24 @@ describe "pets story tests", type: :feature do
     end
   end
 
-  describe "test adoption status change" do
-    it "changes status to adoption-pending" do
-      visit "/pets/#{@pet_1.id}"
-      expect(page).to have_content("Adoption Status: adoptable")
-      find_link("Submit Adoption Request").click
-      expect(page).to have_content("Adoption Status: adoption-pending")
-      find_link("Cancel Adoption Request").click
-      expect(page).to have_content("Adoption Status: adoptable")
-    end
-  end
-
-  describe "test adoption status and sort function on pets index page" do
-    it "change in status results:" do
-      visit "/pets/"
-      find_link("Hershey").visible?
-      find_link("Jersey").visible?
-      find_link("Jersey").click
-      find_link("Submit Adoption Request").click
-      find_link("Back to Pets").click
-      find_link("Hershey").visible?
-      find_link("Jersey").visible?
-      find_link("Only Show Adoptable Pets").click
-      find_link("Hershey").visible?
-      expect(page).to_not have_content('Jersey')
-      find_link("Only Show Adoption-Pending Pets").click
-      expect(page).to_not have_content('Hershey')
-      find_link("Jersey").visible?
-    end
-  end
+  # describe "test adoption status and sort function on pets index page" do
+  #   it "change in status results:" do
+  #     visit "/pets/"
+  #     find_link("Hershey").visible?
+  #     find_link("Jersey").visible?
+  #     find_link("Jersey").click
+  #     find_link("Submit Adoption Request").click
+  #     find_link("Back to Pets").click
+  #     find_link("Hershey").visible?
+  #     find_link("Jersey").visible?
+  #     find_link("Only Show Adoptable Pets").click
+  #     find_link("Hershey").visible?
+  #     expect(page).to_not have_content('Jersey')
+  #     find_link("Only Show Adoption-Pending Pets").click
+  #     expect(page).to_not have_content('Hershey')
+  #     find_link("Jersey").visible?
+  #   end
+  # end
 
 
 
