@@ -68,5 +68,12 @@ RSpec.describe "applications show page " do
     expect(page).to have_content("Adoption Status: Pending Adoption")
     expect(page).to_not have_content("Adoption Status: Adoptable")
     expect(page).to have_content("Pet on hold for #{@app_1.name}")
+
+
+    # within "#open_apps_#{@pet_1.id}" do
+    #   expect(page).to have_content(@pet_1.name)
+    # end
+
+
   end
 end

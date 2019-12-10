@@ -33,6 +33,10 @@ class PetsController < ApplicationController
 
   def show_pet
     @pet = Pet.find(params[:id])
+    # require "pry"; binding.pry
+    # ApplicationPet.select(:application_id).where("pet_id = #{@pet.id} AND status = 'Adoption Pending'")
+    # open_apps = @pet.application_pets
+    # pending_apps = open_apps.select { |app| app.status == "Adoption Pending" }
   end
 
   def edit

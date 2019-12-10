@@ -61,14 +61,16 @@ RSpec.describe "favorite's application section" do
 
     expect(current_path).to eq('/favorites')
 
-    within "#open_apps_#{@pet_1.id}" do
-      expect(page).to have_content(@pet_1.name)
+
+    within "#container_fav" do
+      expect(page).to_not have_content(@pet_1.name)
     end
 
-    within "#open_apps_#{@pet_2.id}" do
-      expect(page).to have_content(@pet_2.name)
+    within "#container_fav" do
+      expect(page).to_not have_content(@pet_2.name)
     end
-
+    expect(page).to_not have_css("#open_apps_#{@pet_1.id}")
+    expect(page).to_not have_css("#open_apps_#{@pet_2.id}")
 
   end
 end
