@@ -39,10 +39,6 @@ describe "reviews for a shelter", type: :feature do
       expect(page).to have_content(@review_2.content)
       expect(page).to_not have_css("img[src*='#{@review_2.picture}']")
     end
-  end
-
-  # it "deletes reviews for the shelter when shelter is deleted" do
-    
-
+  end    
 
 end
