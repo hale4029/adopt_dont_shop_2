@@ -6,8 +6,15 @@ class ApplicationPet < ApplicationRecord
                         :pet_id,
                         :application_id
 
-def self.approve_status
-  update({status: "Approved"})
+def self.pending_status
+  update({status: "Pending Adoption"})
 end
+
+# def self.find_pets_in_applications
+#   ApplicationPet.where(status: "Pending Adoption")
+#   #apps = Application.all
+#   #apps.map { |app| app.pets }.flatten
+# end
+
 
 end
