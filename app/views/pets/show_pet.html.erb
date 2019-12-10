@@ -26,10 +26,9 @@
         <img class="img" src= <%= @pet.image %>>
       </div>
   </div>
-</div>
-
-<div>
-  <% @apps.each do |app| %>
-  <p>Pet on hold for <%= app.name  %></p>
-  <% end %>
+  <div id="applications_pending">
+    <% @apps.each do |app| %>
+    <h3>Pet on hold for: <%= app.name  %></h3>
+    <% end %>
+  </div>
 </div>
