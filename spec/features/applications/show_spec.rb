@@ -14,7 +14,6 @@ RSpec.describe "applications show page " do
                         description:       "I'm a white ball python!",
                         approximate_age:        "4",
                         sex:        "female",
-                        adoption_status:     "adoptable",
                         shelter_id: @shelter_1.id)
 
     @pet_2 = Pet.create(image:     "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
@@ -22,7 +21,6 @@ RSpec.describe "applications show page " do
                        description:       "I'm a panther chameleon! I am not very social but am fun to look at.",
                        approximate_age:        "2",
                        sex:        "male",
-                       adoption_status:     "adoptable",
                        shelter_id: @shelter_1.id)
 
     @app_1 = Application.create(name: 'Harrison Levin',

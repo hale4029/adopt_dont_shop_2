@@ -27,3 +27,9 @@
       </div>
   </div>
 </div>
+
+<div>
+  <% @apps.each do |app| %>
+  <p>Pet on hold for <%= app.name  %></p>
+  <% end %>
+</div>
