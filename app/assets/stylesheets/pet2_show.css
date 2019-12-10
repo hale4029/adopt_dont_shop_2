@@ -34,7 +34,6 @@ div.gallery_2 img {
   padding-top: 20px;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
 }
 
 #pets_show {
@@ -90,4 +89,11 @@ nav li:hover {
   text-decoration: none;
   color: black;
   padding: 10px;
+}
+
+#applications_pending {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  height: 200px;
 }

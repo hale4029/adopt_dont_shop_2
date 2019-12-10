@@ -8,25 +8,7 @@ class Application < ApplicationRecord
                         :state,
                         :zip,
                         :phone,
-                        :description,
-                        :status
-
-  def update_adoption_status(pets)
-    pets.each do |pet|
-      if pet.adoption_status == "adoptable"
-        status = "Pending Adoption"
-      else
-        status = "Adoptable"
-      end
-      pet.update({adoption_status: status})
-      pet.save
-    end
-  end
-
-  def self.find_pets_in_applications
-    apps = Application.all
-    apps.map { |app| app.pets }.flatten
-  end
+                        :description
 
   def self.find_pets(ids)
     ids.map { |id| Pet.find(id) }
@@ -38,6 +20,11 @@ class Application < ApplicationRecord
 
   def self.find_applicant(pet)
     Application.select(:name, :id).joins(:pets).where("pets.id = #{pet.id}")
+  end
+
+  def self.find_multiple_applicants(app_ids)
+    #require "pry"; binding.pry
+    app_ids.map { |id| Application.select(:name).where(id: id) }
   end
 
 end

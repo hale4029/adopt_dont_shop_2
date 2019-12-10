@@ -14,7 +14,6 @@ RSpec.describe "applications show page " do
                         description:       "I'm a white ball python!",
                         approximate_age:        "4",
                         sex:        "female",
-                        adoption_status:     "adoptable",
                         shelter_id: @shelter_1.id)
 
     @pet_2 = Pet.create(image:     "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
@@ -22,7 +21,6 @@ RSpec.describe "applications show page " do
                        description:       "I'm a panther chameleon! I am not very social but am fun to look at.",
                        approximate_age:        "2",
                        sex:        "male",
-                       adoption_status:     "adoptable",
                        shelter_id: @shelter_1.id)
 
     @app_1 = Application.create(name: 'Harrison Levin',
@@ -54,5 +52,26 @@ RSpec.describe "applications show page " do
     click_link(@pet_1.name)
 
     expect(current_path).to eq("/pets/#{@pet_1.id}")
+  end
+
+  it "shows link to approve application for each pet" do
+
+    visit "/applications/#{@app_1.id}"
+
+    within "#section-#{@pet_1.id}" do
+      click_button 'Approve Application'
+    end
+
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to have_content("Adoption Status: Pending Adoption")
+    expect(page).to_not have_content("Adoption Status: Adoptable")
+    expect(page).to have_content("Pet on hold for: #{@app_1.name}")
+
+
+    # within "#open_apps_#{@pet_1.id}" do
+    #   expect(page).to have_content(@pet_1.name)
+    # end
+
+
   end
 end

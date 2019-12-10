@@ -8,7 +8,7 @@ class CreateApplications < ActiveRecord::Migration[5.1]
       t.string :zip
       t.string :phone
       t.string :description
-      t.string :status, default: "pending"
+      t.string :status, default: "Pending Adoption"
 
       t.timestamps
     end

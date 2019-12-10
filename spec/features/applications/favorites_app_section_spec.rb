@@ -18,21 +18,18 @@ RSpec.describe "favorite's application section" do
                         description:       "I'm a white ball python!",
                         approximate_age:        "4",
                         sex:        "female",
-                        adoption_status:     "adoptable",
                         shelter_id: @shelter_1.id)
     @pet_2 = Pet.create(image:     "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
                        name:       "Poppy",
                        description:       "I'm a panther chameleon! I am not very social but am fun to look at.",
                        approximate_age:        "2",
                        sex:        "male",
-                       adoption_status:     "adoptable",
                        shelter_id: @shelter_1.id)
     @pet_3 = Pet.create(image:      "https://localtvwiti.files.wordpress.com/2016/06/thinkstockphotos-528306066.jpg?quality=85&strip=all&w=400&h=225&crop=1",
                         name:       "Betsy",
                         description:       "I'm a blue tang fish. You might recognize me from the movie 'Finding Nemo'! I require a salt water tank.",
                         approximate_age:        "1",
                         sex:        "female",
-                        adoption_status:     "adoptable",
                         shelter_id: @shelter_2.id)
   end
 
@@ -64,14 +61,16 @@ RSpec.describe "favorite's application section" do
 
     expect(current_path).to eq('/favorites')
 
-    within "#open_apps_#{@pet_1.id}" do
-      expect(page).to have_content(@pet_1.name)
+
+    within "#container_fav" do
+      expect(page).to_not have_content(@pet_1.name)
     end
 
-    within "#open_apps_#{@pet_2.id}" do
-      expect(page).to have_content(@pet_2.name)
+    within "#container_fav" do
+      expect(page).to_not have_content(@pet_2.name)
     end
-
+    expect(page).to_not have_css("#open_apps_#{@pet_1.id}")
+    expect(page).to_not have_css("#open_apps_#{@pet_2.id}")
 
   end
 end

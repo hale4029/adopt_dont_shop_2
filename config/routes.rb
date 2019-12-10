@@ -46,6 +46,8 @@ get '/applications/new', to: 'applications#new'
 get '/applications/:id', to: 'applications#show'
 post '/applications', to: 'applications#create'
 get '/pets/:id/applications', to: 'applications#pet_apps'
-  
+patch '/pets/:pet_id/applications/:app_id/', to: 'application_pets#update'
+
+
 
 end
