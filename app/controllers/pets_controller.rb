@@ -2,9 +2,9 @@ class PetsController < ApplicationController
 
   def index
     if params[:adoptable] == "true"
-      @pets = Pet.where(adoption_status: 'adoptable')
+      @pets = Pet.where(adoption_status: 'Adoptable')
     elsif params[:adoptable] == "false"
-      @pets = Pet.where(adoption_status: 'adoption-pending')
+      @pets = Pet.where(adoption_status: 'Pending Adoption')
     else
       @pets = Pet.order(:adoption_status)
     end
@@ -23,9 +23,9 @@ class PetsController < ApplicationController
   def show
     @shelter = Shelter.find(params[:shelter_id])
     if params[:adoptable] == "true"
-      @pets = @shelter.pets.where(adoption_status: 'adoptable')
+      @pets = @shelter.pets.where(adoption_status: 'Adoptable')
     elsif params[:adoptable] == "false"
-      @pets = @shelter.pets.where(adoption_status: 'adoption-pending')
+      @pets = @shelter.pets.where(adoption_status: 'Pending Adoption')
     else
       @pets = @shelter.pets.order(:adoption_status)
     end
@@ -53,10 +53,10 @@ class PetsController < ApplicationController
 
   def change_adoption_status
     pet = Pet.find(params[:id])
-      if pet.adoption_status == "adoptable"
-        status = "adoption-pending"
+      if pet.adoption_status == "Adoptable"
+        status = "Pending Adoption"
       else
-        status = "adoptable"
+        status = "Adoptable"
       end
     pet.update({adoption_status: status})
     pet.save
