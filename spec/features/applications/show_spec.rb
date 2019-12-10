@@ -31,7 +31,16 @@ RSpec.describe "applications show page " do
                                 phone: '720-111-2222',
                                 description: 'I love all of these pets.')
 
+  @app_2 = Application.create(name: 'Melissa Robbins',
+                              address: '3632 Mariposa Street',
+                              city: 'Denver',
+                              state: 'CO',
+                              zip: '80211',
+                              phone: '415-608-4157',
+                              description: 'I love all of these pets.')
+
     @app_1.pets << [@pet_1, @pet_2]
+    @app_2.pets << [@pet_1]
   end
 
   it "shows all info from application" do
@@ -66,12 +75,31 @@ RSpec.describe "applications show page " do
     expect(page).to have_content("Adoption Status: Pending Adoption")
     expect(page).to_not have_content("Adoption Status: Adoptable")
     expect(page).to have_content("Pet on hold for: #{@app_1.name}")
+  end
 
+  it "won't let a user approve the same pet more than once" do
 
-    # within "#open_apps_#{@pet_1.id}" do
-    #   expect(page).to have_content(@pet_1.name)
-    # end
+    visit "/applications/#{@app_1.id}"
 
+    within "#section-#{@pet_1.id}" do
+      click_button 'Approve Application'
+    end
 
+    expect(current_path).to eq("/pets/#{@pet_1.id}")
+    expect(page).to have_content("Adoption Status: Pending Adoption")
+    expect(page).to_not have_content("Adoption Status: Adoptable")
+    expect(page).to have_content("Pet on hold for: #{@app_1.name}")
+
+    visit "/applications/#{@app_2.id}"
+
+    within "#section-#{@pet_1.id}" do
+      expect(page).to_not have_button('Approve Application')
+      expect(page).to have_content('Pending adoption')
+    end
+
+    visit "/pets/#{@pet_1.id}/applications"
+
+    expect(page).to have_link(@app_1.name)
+    expect(page).to have_link(@app_2.name)
   end
 end

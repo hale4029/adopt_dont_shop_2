@@ -33,7 +33,7 @@ RSpec.describe "favorite's application section" do
                         shelter_id: @shelter_2.id)
   end
 
-  it "favorites page has a section showing all the pets that have at least one applicatio open" do
+  it "favorites page has a section showing all the pets that have at least one application open" do
     visit "/pets/#{@pet_1.id}"
     click_button 'Favorite'
 
