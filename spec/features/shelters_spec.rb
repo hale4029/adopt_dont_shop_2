@@ -146,4 +146,81 @@ describe "shelters story tests", type: :feature do
     end
   end
 
+  describe "user story 29" do
+    it "will alert the user with individual fields missing when creating a shelter" do
+
+      visit "/shelters/new"
+
+      fill_in 'name', with: ''
+      fill_in 'address', with: '27 Skylark Drive'
+      fill_in 'city', with: 'Denver'
+      fill_in 'state', with: 'CO'
+      fill_in 'zip', with: 80215
+
+      click_button 'Create Shelter'
+
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_button('Create Shelter')
+
+      fill_in 'name', with: ''
+      fill_in 'address', with: '27 Skylark Drive'
+      fill_in 'city', with: ''
+      fill_in 'state', with: 'CO'
+      fill_in 'zip', with: 80215
+
+      click_button 'Create Shelter'
+
+      expect(page).to have_content("Name can't be blank and City can't be blank")
+      expect(page).to have_button('Create Shelter')
+
+      fill_in 'name', with: 'The Aviary'
+      fill_in 'address', with: '27 Skylark Drive'
+      fill_in 'city', with: 'Denver'
+      fill_in 'state', with: 'CO'
+      fill_in 'zip', with: '80215'
+
+      click_button 'Create Shelter'
+
+      expect(current_path).to eq("/shelters")
+      expect(page).to have_content("Shelter created!")
+    end
+
+    it "will alert the user with individual fields missing when updating a shelter" do
+
+      visit "/shelters/#{@shelter_1.id}/edit"
+
+      fill_in 'name', with: ''
+      fill_in 'address', with: '27 Skylark Drive'
+      fill_in 'city', with: 'Denver'
+      fill_in 'state', with: 'CO'
+      fill_in 'zip', with: 80215
+
+      click_button 'Update Shelter'
+
+      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_button('Update Shelter')
+
+      fill_in 'name', with: ''
+      fill_in 'address', with: '27 Skylark Drive'
+      fill_in 'city', with: ''
+      fill_in 'state', with: 'CO'
+      fill_in 'zip', with: 80215
+
+      click_button 'Update Shelter'
+
+      expect(page).to have_content("Name can't be blank and City can't be blank")
+      expect(page).to have_button('Update Shelter')
+
+      fill_in(:name, :with => 'Updated Shelter Name')
+      fill_in(:address, :with => '123 Pine')
+      fill_in(:city, :with => 'Denver')
+      fill_in(:state, :with => 'Colorado')
+      fill_in(:zip, :with => 80123 )
+
+      click_button 'Update Shelter'
+
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}")
+      expect(page).to have_content("Shelter updated!")
+    end
+  end
 end
