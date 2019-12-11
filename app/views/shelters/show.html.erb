@@ -1,11 +1,21 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <div class="page_container">
+<div id="shelter_info">
 <h1><%= @shelter.name %></h1>
-<li>Address:  <%= @shelter.address %></li>
+<li style="indent{ padding-left: 1.8em }"">Address:  <%= @shelter.address %></li>
 <li>City:     <%= @shelter.city %></li>
 <li>State:    <%= @shelter.state %></li>
 <li>Zip Code: <%= @shelter.zip %></li>
+
+<div id="shelter_stats">
+<h3>Shelter Statistics</h3>
+Number of Pets: <%= @shelter.pet_count %><br>
+Average Review Rating: <%= @shelter.avg_review %><br>
+Number of Applications on File: <%= @shelter.number_of_apps_on_file %><br>
+</div>
+</div>
+
 
 <br>
 <%= link_to "View Pets", "/shelters/#{@shelter.id}/pets" %><br>
