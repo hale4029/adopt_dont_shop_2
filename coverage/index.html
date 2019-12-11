@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T15:13:53-07:00">2019-12-11T15:13:53-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T15:21:31-07:00">2019-12-11T15:21:31-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.36%</span></span>
+    (<span class="covered_percent"><span class="green">98.02%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,9 +32,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>49</b> files in total.
-    <b>1157</b> relevant lines. 
+    <b>1161</b> relevant lines. 
     <span class="green"><b>1138</b> lines covered</span> and
-    <span class="red"><b>19</b> lines missed </span>
+    <span class="red"><b>23</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -142,12 +142,12 @@
       
       <tr>
         <td class="strong"><a href="#ceba3ae35aa122ba73033de9ba0af0a0574d9b12" class="src_link" title="app/models/application.rb">app/models/application.rb</a></td>
-        <td class="green strong">93.33 %</td>
-        <td>34</td>
-        <td>15</td>
-        <td>14</td>
-        <td>1</td>
-        <td>7.7</td>
+        <td class="green strong">100.0 %</td>
+        <td>32</td>
+        <td>13</td>
+        <td>13</td>
+        <td>0</td>
+        <td>8.8</td>
       </tr>
       
       <tr>
@@ -482,11 +482,11 @@
       
       <tr>
         <td class="strong"><a href="#826de12210227993e44c8d76e6c0f28394a448b0" class="src_link" title="spec/models/applications_spec.rb">spec/models/applications_spec.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>52</td>
-        <td>24</td>
-        <td>24</td>
-        <td>0</td>
+        <td class="yellow strong">83.33 %</td>
+        <td>61</td>
+        <td>30</td>
+        <td>25</td>
+        <td>5</td>
         <td>1.4</td>
       </tr>
       
@@ -2800,11 +2800,11 @@
         <div class="source_table" id="ceba3ae35aa122ba73033de9ba0af0a0574d9b12">
   <div class="header">
     <h3>app/models/application.rb</h3>
-    <h4><span class="green">93.33 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>13</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2907,109 +2907,97 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="17">
           
-          <code class="ruby">  def self.remove_all_pets_from_favorites(pets, favorites)</code>
+          
+          <code class="ruby">  </code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
-          
-          <code class="ruby">    pets.each { |pet| favorites.remove_pet(pet.id) }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.find_applicant(pet)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="22">
+        <li class="covered" data-hits="3" data-linenumber="20">
           <span class="hits">3</span>
           
           <code class="ruby">    Application.select(:name, :id).joins(:pets).where(&quot;pets.id = #{pet.id}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="23">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.find_multiple_applicants(app_ids)</code>
         </li>
       
-        <li class="covered" data-hits="65" data-linenumber="26">
+        <li class="covered" data-hits="65" data-linenumber="24">
           <span class="hits">65</span>
           
           <code class="ruby">    app_ids.map { |id| Application.select(:name).where(id: id) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
           <code class="ruby">  def button_logic(pet, app_id)</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="30">
+        <li class="covered" data-hits="18" data-linenumber="28">
           <span class="hits">18</span>
           
           <code class="ruby">    application_pet_status = ApplicationPet.where(&quot;pet_id = #{pet.id} AND status = &#39;Approved&#39; AND application_id = #{app_id}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="31">
+        <li class="covered" data-hits="18" data-linenumber="29">
           <span class="hits">18</span>
           
           <code class="ruby">    application_pet_status.length &gt; 0 ? true : false</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="33">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">end</code>
@@ -14174,11 +14162,11 @@
         <div class="source_table" id="826de12210227993e44c8d76e6c0f28394a448b0">
   <div class="header">
     <h3>spec/models/applications_spec.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">83.33 %</span> covered</h4>
     <div>
-      <b>24</b> relevant lines. 
-      <span class="green"><b>24</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>30</b> relevant lines. 
+      <span class="green"><b>25</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -14302,13 +14290,13 @@
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;find pets&quot; do</code>
+          <code class="ruby">    before :each do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="21">
+          <span class="hits">4</span>
           
-          <code class="ruby">      shelter_1 = Shelter.create(name: &quot;Save Cats&quot;,</code>
+          <code class="ruby">      @shelter_1 = Shelter.create(name: &quot;Save Cats&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -14341,10 +14329,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="27">
+          <span class="hits">4</span>
           
-          <code class="ruby">      pet_1 = shelter_1.pets.create(image: &#39;https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&amp;width=1080&#39;,</code>
+          <code class="ruby">      @pet_1 = @shelter_1.pets.create(image: &#39;https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&amp;width=1080&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -14365,10 +14353,10 @@
           <code class="ruby">                          sex: &quot;Male&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="31">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="4" data-linenumber="31">
+          <span class="hits">4</span>
           
-          <code class="ruby">      pet_2 = shelter_1.pets.create(image: &#39;https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&amp;width=1080&#39;,</code>
+          <code class="ruby">      @pet_2 = @shelter_1.pets.create(image: &#39;https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&amp;width=1080&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -14392,79 +14380,79 @@
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="36">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="36">
           
-          <code class="ruby">      pet_objects = Application.find_pets([pet_1.id, pet_2.id])</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(pet_objects).to eq([pet_1, pet_2])</code>
+          <code class="ruby">    it &quot;find pets&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="38">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      pet_objects = Application.find_pets([@pet_1.id, @pet_2.id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="39">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(pet_objects).to eq([@pet_1, @pet_2])</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
           
           
           <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="40">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &quot;remove all pets from favorites&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="42">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;find applicant&quot; do</code>
+          <code class="ruby">    xit &quot;remove all pets from favorites&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      visit &quot;/pets/#{@pet_1.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      find_button(&quot;Favorite&quot;).click</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="45">
           
-          <code class="ruby">    it &quot;find multiple applicants&quot; do</code>
+          
+          <code class="ruby">      visit &quot;/pets/#{@pet_2.id}&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      find_button(&quot;Favorite&quot;).click</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="47">
+          
+          
+          <code class="ruby">      expect(page).to have_content(&quot;Favorites: 2&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
@@ -14473,10 +14461,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="49">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="49">
           
-          <code class="ruby">    it &quot;button_logic&quot; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="50">
@@ -14488,10 +14476,64 @@
         <li class="never" data-hits="" data-linenumber="51">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="52">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;find applicant&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="53">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="54">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;find multiple applicants&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="56">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="57">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;button_logic&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby">end</code>

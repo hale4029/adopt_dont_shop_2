@@ -17,28 +17,35 @@ describe Application, type: :model do
   end
 
   describe "model methods" do
-    it "find pets" do
-      shelter_1 = Shelter.create(name: "Save Cats",
+    before :each do
+      @shelter_1 = Shelter.create(name: "Save Cats",
                                 address: "123 Pine",
                                 city: "Denver",
                                 state: "Colorado",
                                 zip: 80112)
 
-      pet_1 = shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
+      @pet_1 = @shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
                           name: "Jersey",
                           approximate_age: "10",
                           sex: "Male")
-      pet_2 = shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
+      @pet_2 = @shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
                           name: "Hershey",
                           approximate_age: "10",
                           sex: "Female")
-
-      pet_objects = Application.find_pets([pet_1.id, pet_2.id])
-      expect(pet_objects).to eq([pet_1, pet_2])
     end
 
-    it "remove all pets from favorites" do
+    it "find pets" do
+      pet_objects = Application.find_pets([@pet_1.id, @pet_2.id])
+      expect(pet_objects).to eq([@pet_1, @pet_2])
     end
+
+    # xit "remove all pets from favorites" do
+    #   visit "/pets/#{@pet_1.id}"
+    #   find_button("Favorite").click
+    #   visit "/pets/#{@pet_2.id}"
+    #   find_button("Favorite").click
+    #   expect(page).to have_content("Favorites: 2")
+    # end
 
     it "find applicant" do
     end
