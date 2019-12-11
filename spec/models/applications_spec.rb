@@ -39,14 +39,6 @@ describe Application, type: :model do
       expect(pet_objects).to eq([@pet_1, @pet_2])
     end
 
-    # xit "remove all pets from favorites" do
-    #   visit "/pets/#{@pet_1.id}"
-    #   find_button("Favorite").click
-    #   visit "/pets/#{@pet_2.id}"
-    #   find_button("Favorite").click
-    #   expect(page).to have_content("Favorites: 2")
-    # end
-
     it "find applicant" do
     end
 
