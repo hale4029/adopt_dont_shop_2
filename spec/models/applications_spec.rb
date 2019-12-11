@@ -55,8 +55,30 @@ describe Application, type: :model do
     end
 
     it "find multiple applicants" do
-    end
+      app_1 = Application.create(name: 'Harrison Levin',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
 
+      app_1.pets << [@pet_1, @pet_2]
+      app_2 = Application.create(name: 'Harry',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
+
+      app_2.pets << [@pet_1, @pet_2]
+      app_ids = [app_2.id, app_1.id]
+      result = Application.find_multiple_applicants(app_ids).flatten
+      expect(result.first.name).to eq("Harry")
+      expect(result.last.name).to eq("Harrison Levin")
+    end
+    
     it "button_logic" do
     end
   end

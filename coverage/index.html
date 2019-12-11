@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T16:30:56-07:00">2019-12-11T16:30:56-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T16:42:20-07:00">2019-12-11T16:42:20-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.47%</span></span>
+    (<span class="covered_percent"><span class="green">98.48%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.5
+         2.49
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>1176</b> relevant lines. 
-    <span class="green"><b>1158</b> lines covered</span> and
+    <b>1184</b> relevant lines. 
+    <span class="green"><b>1166</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -147,7 +147,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>9.2</td>
+        <td>9.4</td>
       </tr>
       
       <tr>
@@ -493,11 +493,11 @@
       <tr>
         <td class="strong"><a href="#826de12210227993e44c8d76e6c0f28394a448b0" class="src_link" title="spec/models/applications_spec.rb">spec/models/applications_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>64</td>
-        <td>29</td>
-        <td>29</td>
+        <td>85</td>
+        <td>37</td>
+        <td>37</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -2959,8 +2959,8 @@
           <code class="ruby">  def self.find_multiple_applicants(app_ids)</code>
         </li>
       
-        <li class="covered" data-hits="68" data-linenumber="22">
-          <span class="hits">68</span>
+        <li class="covered" data-hits="71" data-linenumber="22">
+          <span class="hits">71</span>
           
           <code class="ruby">    app_ids.map { |id| Application.select(:name).where(id: id) }</code>
         </li>
@@ -14445,8 +14445,8 @@
     <h3>spec/models/applications_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>29</b> relevant lines. 
-      <span class="green"><b>29</b> lines covered</span> and
+      <b>37</b> relevant lines. 
+      <span class="green"><b>37</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -14766,73 +14766,199 @@
           <code class="ruby">      name_id = Application.find_applicants(@pet_1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
-          
-          
-          <code class="ruby">      #require &quot;pry&quot;; binding.pry</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(name_id.first.name).to eq(&quot;Harrison Levin&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
+        <li class="covered" data-hits="1" data-linenumber="54">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(name_id.first.id).to eq(app_1.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="57">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
+        <li class="covered" data-hits="1" data-linenumber="57">
           <span class="hits">1</span>
           
           <code class="ruby">    it &quot;find multiple applicants&quot; do</code>
         </li>
       
+        <li class="covered" data-hits="1" data-linenumber="58">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      app_1 = Application.create(name: &#39;Harrison Levin&#39;,</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                  address: &#39;1234 Lame Street&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                  city: &#39;Denver&#39;,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="61">
           
-          <code class="ruby">    it &quot;button_logic&quot; do</code>
+          
+          <code class="ruby">                                  state: &#39;CO&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                  zip: &#39;80211&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">                                  phone: &#39;720-111-2222&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">                                  description: &#39;I love all of these pets.&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      app_1.pets &lt;&lt; [@pet_1, @pet_2]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      app_2 = Application.create(name: &#39;Harry&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">                                  address: &#39;1234 Lame Street&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">                                  city: &#39;Denver&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">                                  state: &#39;CO&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">                                  zip: &#39;80211&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">                                  phone: &#39;720-111-2222&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">                                  description: &#39;I love all of these pets.&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      app_2.pets &lt;&lt; [@pet_1, @pet_2]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      app_ids = [app_2.id, app_1.id]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      result = Application.find_multiple_applicants(app_ids).flatten</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result.first.name).to eq(&quot;Harry&quot;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result.last.name).to eq(&quot;Harrison Levin&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;button_logic&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">end</code>
