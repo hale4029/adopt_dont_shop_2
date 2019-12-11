@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20191209215200) do
     t.string "title"
     t.integer "rating"
     t.string "content"
-    t.binary "picture", default: ""
+    t.string "picture", default: "https://sterlingcomputers.com/wp-content/themes/Sterling/images/no-image-found-360x260.png"
     t.bigint "shelter_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -43,6 +43,10 @@ class ReviewsController < ApplicationController
 
 private
   def review_params
-    params.permit(:title, :rating, :content, :picture)
+    if params[:picture] == ""
+      params.permit(:title, :rating, :content)
+    else
+      params.permit(:title, :rating, :content, :picture)
+    end
   end
 end

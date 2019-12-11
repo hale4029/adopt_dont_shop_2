@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.1]
       t.string :title
       t.integer :rating
       t.string :content
-      t.binary :picture, default: ""
+      t.string :picture, default: "https://sterlingcomputers.com/wp-content/themes/Sterling/images/no-image-found-360x260.png"
       t.references :shelter, foreign_key: true
 
       t.timestamps
