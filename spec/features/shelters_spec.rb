@@ -221,6 +221,8 @@ describe "shelters story tests", type: :feature do
 
       expect(current_path).to eq("/shelters/#{@shelter_1.id}")
       expect(page).to have_content("Shelter updated!")
+      expect(page).to have_content('Updated Shelter Name')
+      expect(page).to_not have_content('Save Cats')
     end
   end
 end
