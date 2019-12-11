@@ -78,8 +78,22 @@ describe Application, type: :model do
       expect(result.first.name).to eq("Harry")
       expect(result.last.name).to eq("Harrison Levin")
     end
-    
+
     it "button_logic" do
+      app_1 = Application.create(name: 'Harrison Levin',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
+
+      app_1.pets << [@pet_1, @pet_2]
+      result = app_1.button_logic(@pet_1, app_1.id)
+      expect(result).to eq(false)
+      ApplicationPet.approve_status(@pet_1.id, app_1.id)
+      result = app_1.button_logic(@pet_1, app_1.id)
+      expect(result).to eq(true)
     end
   end
 end

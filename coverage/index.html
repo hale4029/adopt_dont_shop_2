@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T16:42:20-07:00">2019-12-11T16:42:20-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T16:56:36-07:00">2019-12-11T16:56:36-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.48%</span></span>
+    (<span class="covered_percent"><span class="green">98.49%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>1184</b> relevant lines. 
-    <span class="green"><b>1166</b> lines covered</span> and
+    <b>1191</b> relevant lines. 
+    <span class="green"><b>1173</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -147,7 +147,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>9.4</td>
+        <td>9.7</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>1.9</td>
       </tr>
       
       <tr>
@@ -493,11 +493,11 @@
       <tr>
         <td class="strong"><a href="#826de12210227993e44c8d76e6c0f28394a448b0" class="src_link" title="spec/models/applications_spec.rb">spec/models/applications_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>85</td>
-        <td>37</td>
-        <td>37</td>
+        <td>99</td>
+        <td>44</td>
+        <td>44</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.4</td>
       </tr>
       
       <tr>
@@ -2983,14 +2983,14 @@
           <code class="ruby">  def button_logic(pet, app_id)</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="26">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="26">
+          <span class="hits">20</span>
           
           <code class="ruby">    application_pet_status = ApplicationPet.where(&quot;pet_id = #{pet.id} AND status = &#39;Approved&#39; AND application_id = #{app_id}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="27">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="20" data-linenumber="27">
+          <span class="hits">20</span>
           
           <code class="ruby">    application_pet_status.length &gt; 0 ? true : false</code>
         </li>
@@ -3086,8 +3086,8 @@
           <code class="ruby">  def self.approve_status(pet_id, app_id)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="10">
+          <span class="hits">7</span>
           
           <code class="ruby">    where(&quot;pet_id = #{pet_id} AND application_id = #{app_id}&quot;).update({status: &quot;Approved&quot;})</code>
         </li>
@@ -14445,8 +14445,8 @@
     <h3>spec/models/applications_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
-      <span class="green"><b>37</b> lines covered</span> and
+      <b>44</b> relevant lines. 
+      <span class="green"><b>44</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -14937,7 +14937,7 @@
         <li class="never" data-hits="" data-linenumber="81">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="82">
@@ -14946,19 +14946,103 @@
           <code class="ruby">    it &quot;button_logic&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      app_1 = Application.create(name: &#39;Harrison Levin&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="84">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">                                  address: &#39;1234 Lame Street&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby">                                  city: &#39;Denver&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">                                  state: &#39;CO&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">                                  zip: &#39;80211&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
+          
+          
+          <code class="ruby">                                  phone: &#39;720-111-2222&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
+          
+          
+          <code class="ruby">                                  description: &#39;I love all of these pets.&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="90">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      app_1.pets &lt;&lt; [@pet_1, @pet_2]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      result = app_1.button_logic(@pet_1, app_1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result).to eq(false)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      ApplicationPet.approve_status(@pet_1.id, app_1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      result = app_1.button_logic(@pet_1, app_1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result).to eq(true)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="98">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="99">
           
           
           <code class="ruby">end</code>
