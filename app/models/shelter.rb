@@ -15,4 +15,22 @@ class Shelter < ApplicationRecord
     approved_pets.reject(&:empty?).length == 0 ? true : false
   end
 
+  def avg_review
+    result = Review.where("shelter_id = #{self.id}").average(:rating)
+    result == nil ? 0 : result.round(1)
+  end
+
+  def number_of_apps_on_file
+    pet_ids = self.pets.map { |pet| pet.id }
+    applications = pet_ids.reduce([]) do |acc, id|
+      acc << ApplicationPet.where("pet_id = #{id}")
+      acc.reject(&:empty?)
+    end
+    applications.flatten.length
+  end
+
+  def pet_count
+    self.pets.count
+  end
+
 end
