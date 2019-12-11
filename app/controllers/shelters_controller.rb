@@ -18,6 +18,7 @@ class SheltersController < ApplicationController
     x = params[:sorted] == "true" ? "true" : "false"
     y = params[:alpha] == "true" ? "true" : "false"
     @helper = [shelters, x, y]
+    require "pry"; binding.pry
   end
 
   def show

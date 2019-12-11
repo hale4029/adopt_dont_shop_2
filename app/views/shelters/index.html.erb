@@ -23,7 +23,7 @@
 
 
   <% @helper.first.each do |shelter| %>
-  <div class="section_shelter">
+  <div id="section_shelter_<%= shelter.id %>">
     <div id="adjustments">
     <%= link_to "#{shelter.name}", "/shelters/#{shelter.id}", :class => "link1" %>
     </div>
