@@ -52,3 +52,9 @@ div #adjustments:hover {
 #container {
   min-height: 100vh
 }
+
+.link2 {
+  padding: 10px;
+  margin: 0;
+  text-decoration: none;
+}
