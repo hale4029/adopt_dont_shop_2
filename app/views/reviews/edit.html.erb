@@ -1,3 +1,5 @@
+<div class="page_container">
+
 <h1>Edit Review</h1>
 <%= form_tag "/shelters/#{@shelter_id}/reviews/#{@review.id}", method: :patch do %><section class='form'>
   <%= label_tag "Title:" %>
@@ -10,3 +12,5 @@
   <%= text_field_tag :picture, @review.picture  %><br></section>
   <button type="submit" class="btn btn-info">Submit</button>
 <% end %>
+
+</div>

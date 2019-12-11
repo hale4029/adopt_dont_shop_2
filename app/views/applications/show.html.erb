@@ -16,7 +16,7 @@
     <% if @app.button_logic(pet, @app.id) %><br>
       <%= button_to 'Unapprove Application', "/pets/#{pet.id}/applications/#{@app.id}?status=false", method: :patch %>
     <% elsif pet.adoption_status == "Adoptable" %>
-      <%= button_to 'Approve Application', "/pets/#{pet.id}/applications/#{@app.id}", method: :patch %>
+      <br><%= button_to 'Approve Application', "/pets/#{pet.id}/applications/#{@app.id}", method: :patch %>
     <% else %>
       <p>Pending adoption</p>
     <% end %>

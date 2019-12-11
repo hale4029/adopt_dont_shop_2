@@ -39,7 +39,6 @@ class PetsController < ApplicationController
 
   def show_pet
     @pet = Pet.find(params[:id])
-    #ApplicationPet.select(:application_id).where("pet_id = #{@pet.id} AND status = 'Adoption Pending'")
     open_apps = @pet.application_pets
     app_ids = open_apps.map do |app|
       if app.status == "Approved"
