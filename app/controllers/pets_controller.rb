@@ -66,8 +66,14 @@ class PetsController < ApplicationController
   end
 
   def destroy
-    Pet.destroy(params[:id])
-    redirect_to '/pets'
+    pet = Pet.find(params[:id])
+    if Pet.find_pets_with_approved_application(pet)
+      Pet.destroy(params[:id])
+      redirect_back(fallback_location: "/pets")
+    else
+      flash[:error] = "Unable to delete pet. Approved application on file."
+      redirect_back(fallback_location: "/pets")
+    end
   end
 
   def change_adoption_status
