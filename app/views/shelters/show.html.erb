@@ -52,10 +52,7 @@ Number of Applications on File: <%= @shelter.number_of_apps_on_file %><br>
         <div id="review_stuff">
         <%= review.content %>
         </div>
-        <% if review.picture != "" %>
-          <div id="review_img"><img class="img" src= <%= review.picture %>, alt="No Picture"></div>
-        <% else %>
-        <% end %>
+        <div id="review_img"><img class="img" src= <%= review.picture %>, alt="No Picture"></div>
       </div>
     <%= button_to "Edit", "/shelters/#{@shelter.id}/reviews/#{review.id}/edit", method: :get %>
     <%= button_to "Delete", "/shelters/#{@shelter.id}/reviews/#{review.id}", method: :delete %>
