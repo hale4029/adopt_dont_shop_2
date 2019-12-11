@@ -23,7 +23,6 @@ class Application < ApplicationRecord
   end
 
   def self.find_multiple_applicants(app_ids)
-    #require "pry"; binding.pry
     app_ids.map { |id| Application.select(:name).where(id: id) }
   end
 
