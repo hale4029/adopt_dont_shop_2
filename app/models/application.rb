@@ -14,7 +14,7 @@ class Application < ApplicationRecord
     ids.map { |id| Pet.find(id) }
   end
 
-  def self.find_applicant(pet)
+  def self.find_applicants(pet)
     Application.select(:name, :id).joins(:pets).where("pets.id = #{pet.id}")
   end
 

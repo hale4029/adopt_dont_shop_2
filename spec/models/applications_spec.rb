@@ -39,7 +39,19 @@ describe Application, type: :model do
       expect(pet_objects).to eq([@pet_1, @pet_2])
     end
 
-    it "find applicant" do
+    it "find applicants" do
+      app_1 = Application.create(name: 'Harrison Levin',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
+
+      app_1.pets << [@pet_1, @pet_2]
+      name_id = Application.find_applicants(@pet_1)
+      expect(name_id.first.name).to eq("Harrison Levin")
+      expect(name_id.first.id).to eq(app_1.id)
     end
 
     it "find multiple applicants" do

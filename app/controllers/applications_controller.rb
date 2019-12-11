@@ -26,9 +26,9 @@ class ApplicationsController < ApplicationController
     @app = Application.find(params[:id])
   end
 
-  def pet_apps
+  def pet_apps     
     @pet = Pet.find(params[:id])
-    @applicants = Application.find_applicant(@pet)
+    @applicants = Application.find_applicants(@pet)
   end
 
   private
