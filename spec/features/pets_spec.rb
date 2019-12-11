@@ -174,6 +174,87 @@ describe "pets story tests", type: :feature do
   #   end
   # end
 
+  describe "user story 33" do
+    it "will alert the user with individual fields missing when creating a pet" do
+
+      visit "/shelters/#{@shelter_1.id}/pets/new"
+
+      fill_in 'image', with: ''
+      fill_in 'name', with: 'Jersey'
+      fill_in 'approximate_age', with: 10
+      select('Male', :from => :sex)
+      fill_in 'description', with: "I'm a great one."
+
+      click_button 'Create Pet'
+
+      expect(page).to have_content("Image can't be blank")
+      expect(page).to have_button('Create Pet')
+
+      fill_in 'image', with: ''
+      fill_in 'name', with: ''
+      fill_in 'approximate_age', with: 10
+      select('Male', :from => :sex)
+      fill_in 'description', with: "I'm a great one."
+
+      click_button 'Create Pet'
+
+      expect(page).to have_content("Image can't be blank and Name can't be blank")
+      expect(page).to have_button('Create Pet')
+
+
+      fill_in 'image', with: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080'
+      fill_in 'name', with: 'Jersey'
+      fill_in 'approximate_age', with: 10
+      select('Male', :from => :sex)
+      fill_in 'description', with: "I'm a great one."
+
+      click_button 'Create Pet'
+
+      expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
+      expect(page).to have_content("Pet created!")
+    end
+
+    it "will alert the user with individual fields missing when updating a pet" do
+
+      visit "/pets/#{@pet_1.id}/edit"
+
+      fill_in 'image', with: ''
+      fill_in 'name', with: 'Jersey'
+      fill_in 'approximate_age', with: 10
+      select('Male', :from => :sex)
+      fill_in 'description', with: "I'm a great one."
+
+      click_button 'Update Pet Info'
+
+      expect(page).to have_content("Image can't be blank")
+      expect(page).to have_button('Update Pet Info')
+
+      fill_in 'image', with: ''
+      fill_in 'name', with: ''
+      fill_in 'approximate_age', with: 10
+      select('Male', :from => :sex)
+      fill_in 'description', with: "I'm a great one."
+
+      click_button 'Update Pet Info'
+
+      expect(page).to have_content("Image can't be blank and Name can't be blank")
+      expect(page).to have_button('Update Pet Info')
+
+      fill_in 'image', with: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080'
+      fill_in 'name', with: 'Jerry'
+      fill_in 'approximate_age', with: 10
+      select('Male', :from => :sex)
+      fill_in 'description', with: "I'm a great one."
+
+      click_button 'Update Pet Info'
+
+      expect(current_path).to eq("/pets/#{@pet_1.id}")
+      expect(page).to have_content("Pet updated!")
+      expect(page).to have_content('Jerry')
+      expect(page).to_not have_content('Jersey')
+    end
+  end
+
 
 
 
