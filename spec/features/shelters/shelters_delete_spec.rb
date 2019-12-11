@@ -43,11 +43,16 @@ RSpec.describe "cannot delete a shelter with an approved pet" do
     visit "/shelters"
 
     within "#section_shelter_#{@shelter_1.id}" do
-      expect(page).to_not have_link("Delete")
+      click_link("Delete")
     end
 
+    expect(page).to have_content("Unable to delete shelter. Approved application on file.")
+
     within "#section_shelter_#{@shelter_2.id}" do
-      expect(page).to have_link("Delete")
+      click_link("Delete")
     end
+
+    expect(page).to_not have_css("#section_shelter_#{@shelter_2.id}")
+
   end
 end

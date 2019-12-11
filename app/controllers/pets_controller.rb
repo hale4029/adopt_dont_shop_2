@@ -68,7 +68,7 @@ class PetsController < ApplicationController
     pet = Pet.find(params[:id])
     if Pet.find_pets_with_approved_application(pet)
       Pet.destroy(params[:id])
-      redirect_back(fallback_location: "/pets")
+      redirect_to "/pets"
     else
       flash[:error] = "Unable to delete pet. Approved application on file."
       redirect_back(fallback_location: "/pets")
