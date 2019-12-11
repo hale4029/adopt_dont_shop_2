@@ -25,24 +25,20 @@ describe "reviews for a shelter", type: :feature do
   end
 
 
-  it "shows multiple reviews for the shelter on the shleter's home page" do
+  it "shows multiple reviews for the shelter on the shelter's home page" do
     visit "/shelters/#{@shelter_1.id}"
 
     within "#review-#{@review_1.id}" do
       expect(page).to have_content(@review_1.title)
-      #expect(page).to have_content(@review_1.rating)
       expect(page).to have_content(@review_1.content)
       expect(page).to have_css("img[src*='#{@review_1.picture}']")
     end
 
     within "#review-#{@review_2.id}" do
       expect(page).to have_content(@review_2.title)
-      #expect(page).to have_content(@review_2.rating)
       expect(page).to have_content(@review_2.content)
       expect(page).to_not have_css("img[src*='#{@review_2.picture}']")
     end
-
-  end
-
+  end    
 
 end
