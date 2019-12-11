@@ -1,3 +1,5 @@
+<div class="page_container">
+
 <h1>Add Review</h1>
 
 <%= form_tag("/shelters/#{@shelter.id}", method: :post) do %><section class='form'>
@@ -11,3 +13,4 @@
   <%= text_field_tag :picture  %><br></section>
   <button type="submit" class="btn btn-info">Submit</button>
 <% end %>
+</div>
