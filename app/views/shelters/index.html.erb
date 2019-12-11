@@ -23,7 +23,7 @@
 
 
   <% @helper.first.each do |shelter| %>
-  <div class="section_shelter">
+  <div id="section_shelter_<%= shelter.id %>">
     <div id="adjustments">
     <%= link_to "#{shelter.name}", "/shelters/#{shelter.id}", :class => "link1" %>
     </div>
@@ -32,7 +32,11 @@
         <%= link_to "Edit", "/shelters/#{shelter.id}/edit", :class => "link1" %>
       </div>
       <div id="adjustments">
-      <%= link_to "Delete", "/shelters/#{shelter.id}", method: :delete, :class => "link1" %>
+      <% if Shelter.find_shelters_with_pets_under_adoption(shelter) %>
+        <%= link_to "Delete", "/shelters/#{shelter.id}", method: :delete, :class => "link1" %>
+      <% else %>
+        <div style="color=red" class="link2" >N/A</div>
+      <% end %>
       </div>
     </div>
   </div>
