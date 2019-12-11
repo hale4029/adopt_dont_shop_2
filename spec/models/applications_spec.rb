@@ -16,41 +16,37 @@ describe Application, type: :model do
     it { should have_many(:pets).through(:application_pets) }
   end
 
-  describe "methods" do
-    it "can update adoption status of pet" do
+  describe "model methods" do
+    it "find pets" do
+      shelter_1 = Shelter.create(name: "Save Cats",
+                                address: "123 Pine",
+                                city: "Denver",
+                                state: "Colorado",
+                                zip: 80112)
 
-      @shelter_1 = Shelter.create(name:    "Reptile Room",
-                                  address: "2364 Desert Lane",
-                                  city:    "Denver",
-                                  state:   "CO",
-                                  zip:     "80211")
+      pet_1 = shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
+                          name: "Jersey",
+                          approximate_age: "10",
+                          sex: "Male")
+      pet_2 = shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
+                          name: "Hershey",
+                          approximate_age: "10",
+                          sex: "Female")
 
-      @app_1 = Application.create(name: 'Harrison Levin',
-                                  address: '1234 Lame Street',
-                                  city: 'Denver',
-                                  state: 'CO',
-                                  zip: '80211',
-                                  phone: '720-111-2222',
-                                  description: 'I love all of these pets.')
+      pet_objects = Application.find_pets([pet_1.id, pet_2.id])
+      expect(pet_objects).to eq([pet_1, pet_2])
+    end
 
-      @pet_1 = Pet.create(image:      "https://www.lllreptile.com/uploads/images/StoreInventoryImage/14570/large",
-                          name:       "Alfredo",
-                          description:       "I'm a white ball python!",
-                          approximate_age:        "4",
-                          sex:        "female",
-                          adoption_status:     "adoptable",
-                          shelter_id: @shelter_1.id)
+    it "remove all pets from favorites" do
+    end
 
-      @pet_2 = Pet.create(image:     "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
-                         name:       "Poppy",
-                         description:       "I'm a panther chameleon! I am not very social but am fun to look at.",
-                         approximate_age:        "2",
-                         sex:        "male",
-                         adoption_status:     "adoptable",
-                         shelter_id: @shelter_1.id)
+    it "find applicant" do
+    end
 
-      pets = [@pet_1, @pet_2]
-      
+    it "find multiple applicants" do
+    end
+
+    it "button_logic" do
     end
   end
 end

@@ -36,11 +36,12 @@ describe ApplicationPet, type: :model do
                                       pet_id: @pet_1.id)
     end
 
-    it ".approve_status" do
-
+    it ".approve_status and .pending status methods" do
       application = ApplicationPet.approve_status(@app_pet.pet_id, @app_pet.application_id)
       application.first.save
       expect(application.first.status).to eq("Approved")
+      application = ApplicationPet.pending_status(@app_pet.pet_id, @app_pet.application_id)
+      expect(application.first.status).to eq("Pending")
     end
   end
 end
