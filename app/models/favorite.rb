@@ -32,4 +32,8 @@ class Favorite
     pets_pending.map { |app_pet| Pet.find(app_pet.pet_id) }
   end
 
+  def self.find_pending_adoption_pets
+    pets_pending = ApplicationPet.where(status: "Pending")
+    pets_pending.map { |app_pet| Pet.find(app_pet.pet_id) }.uniq
+  end
 end

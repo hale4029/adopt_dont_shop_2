@@ -5,9 +5,8 @@
   </nav>
 </div>
 
-<nav><%= @pets.length == 0 ? "No Favorites Added" : "" %></nav>
-
 <h1 id="fav_header">Favorited Pets</h1>
+<h2 style="color: blue" id="fav_header"><%= @pets.length == 0 ? "No Favorites Added" : "" %></h2>
 
 <div id="container_fav">
   <div id="favorited_pets">
@@ -27,12 +26,22 @@
 
 
 <div id="app_pets">
-  <h3 id="adp_header">Adoption Pending</h3>
-  <% @app_pets.each do |pet| %>
+  <h3 id="adp_header">Approved Pets</h3>
+  <div id="box-adop">
+  <% @approved_pets.each do |pet| %>
+    <div id="approved_apps_<%= pet.id %>">
+      <%= link_to "#{pet.name}", "/pets/#{pet.id}", :class => "link_pets" %>
+    </div>
+  <% end %>
+  </div>
+  <h3 id="adp_header">Pets with Open Applications</h3>
+  <div id="box-adop">
+  <% @pending_pets.each do |pet| %>
     <div id="open_apps_<%= pet.id %>">
       <%= link_to "#{pet.name}", "/pets/#{pet.id}", :class => "link_pets" %>
     </div>
   <% end %>
+  </div>
 </div>
 
 

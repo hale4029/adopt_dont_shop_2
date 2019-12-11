@@ -60,17 +60,57 @@ RSpec.describe "favorite's application section" do
     click_button 'Submit'
 
     expect(current_path).to eq('/favorites')
+    #save_and_open_page
 
-
-    within "#container_fav" do
+    within "#favs" do
       expect(page).to_not have_content(@pet_1.name)
     end
 
-    within "#container_fav" do
+    within "#favs" do
       expect(page).to_not have_content(@pet_2.name)
     end
-    expect(page).to_not have_css("#open_apps_#{@pet_1.id}")
-    expect(page).to_not have_css("#open_apps_#{@pet_2.id}")
 
+    within "#open_apps_#{@pet_1.id}" do
+      expect(page).to have_content(@pet_1.name)
+    end
+
+    within "#open_apps_#{@pet_2.id}" do
+      expect(page).to have_content(@pet_2.name)
+    end
+
+    expect(page).to_not have_css("#approved_apps_#{@pet_1.id}")
+    expect(page).to_not have_css("#approved_apps_#{@pet_2.id}")
   end
+
+  it "show pets that are approved in the approved section on the favorites page" do
+    app_1 = Application.create(name: 'Harrison Levin',
+                                address: '1234 Lame Street',
+                                city: 'Denver',
+                                state: 'CO',
+                                zip: '80211',
+                                phone: '720-111-2222',
+                                description: 'I love all of these pets.')
+
+    app_1.pets << [@pet_1, @pet_2]
+
+    visit "/applications/#{app_1.id}"
+
+    within "#section-#{@pet_1.id}" do
+      click_button 'Approve Application'
+    end
+
+    visit "/favorites"
+
+    expect(page).to_not have_css("#open_apps_#{@pet_1.id}")
+
+    within "#open_apps_#{@pet_2.id}" do
+      expect(page).to have_content(@pet_2.name)
+    end
+
+    within "#approved_apps_#{@pet_1.id}" do
+      expect(page).to have_content(@pet_1.name)
+    end
+
+    expect(page).to_not have_css("#approved_apps_#{@pet_2.id}")
+    end
 end
