@@ -6,7 +6,7 @@
 
 #favorited_pets {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
   padding-left: 45px;
 }
@@ -48,8 +48,7 @@ div.gallery img {
   display: flex;
   width: 350px;
   flex-direction: column;
-  border: solid 3px black;
-  margin-right: 20px;
+  margin-right: 40px;
   margin-bottom: 20px;
 }
 
@@ -59,9 +58,18 @@ div[id^="open_apps_"] {
   padding: 5px;
 }
 
-#fav_header {
+div[id^="approved_apps_"] {
   display: flex;
   justify-content: center;
+  padding: 5px;
+}
+
+#fav_header {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 0;
+  margin: 0;
 }
 
 #adp_header {
@@ -70,5 +78,11 @@ div[id^="open_apps_"] {
   padding: 5px;
   margin: 0;
   padding-bottom: 5px;
-  border-bottom: solid 3px black;
+  border-bottom: solid 3px grey;
+}
+
+#box-adop {
+
+  min-height: 200px;
+  margin-top: 10px;
 }
