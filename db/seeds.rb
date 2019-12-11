@@ -68,21 +68,18 @@ Application.destroy_all
                      sex: 'male',
                      shelter_id: @shelter_2.id)
 
-# @app_1 = Application.create(name: 'Harrison Levin',
-#                             address: '1234 Lame Street',
-#                             city: 'Denver',
-#                             state: 'CO',
-#                             zip: '80211',
-#                             phone: '720-111-2222',
-#                             description: 'I love all of these pets.')
-#
-# @app_2 = Application.create(name: 'Melissa Robbins',
-#                             address: '3632 Mariposa Street',
-#                             city: 'Denver',
-#                             state: 'CO',
-#                             zip: '80211',
-#                             phone: '415-608-4157',
-#                             description: 'I love all of these pets.')
-#
-# @app_1.pets << [@pet_1, @pet_2]
-# @app_2.pets <<[@pet_1, @pet_7]
+@review_1 = Review.create(title: "Great experience!",
+                          rating: 5,
+                          content: "I got a snake from here and he is wonderful.",
+                          picture: "https://www.virginiamercury.com/wp-content/uploads/2019/04/garter400.jpg",
+                          shelter_id: @shelter_1.id)
+
+@review_2 = Review.create(title: "This place sucks.",
+                          rating: 2,
+                          content: "Filthy animals",
+                          shelter_id: @shelter_1.id)
+
+@review_3 = Review.create(title: "Love this shelter!",
+                          rating: 4,
+                          content: "Customer service could have been better, but overall good experience.",
+                          shelter_id: @shelter_2.id)
