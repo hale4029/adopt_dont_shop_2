@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T17:35:04-07:00">2019-12-11T17:35:04-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T17:42:06-07:00">2019-12-11T17:42:06-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.55%</span></span>
+    (<span class="covered_percent"><span class="green">98.56%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>1241</b> relevant lines. 
-    <span class="green"><b>1223</b> lines covered</span> and
+    <b>1246</b> relevant lines. 
+    <span class="green"><b>1228</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -157,7 +157,7 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>2.1</td>
+        <td>2.3</td>
       </tr>
       
       <tr>
@@ -187,7 +187,7 @@
         <td>12</td>
         <td>12</td>
         <td>0</td>
-        <td>1.8</td>
+        <td>2.1</td>
       </tr>
       
       <tr>
@@ -513,11 +513,11 @@
       <tr>
         <td class="strong"><a href="#ba79b65ba613b6ae12452b132da8c06bbd7e2ba2" class="src_link" title="spec/models/pet_spec.rb">spec/models/pet_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>61</td>
-        <td>30</td>
-        <td>30</td>
+        <td>66</td>
+        <td>35</td>
+        <td>35</td>
         <td>0</td>
-        <td>1.6</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
@@ -3086,8 +3086,8 @@
           <code class="ruby">  def self.approve_status(pet_id, app_id)</code>
         </li>
       
-        <li class="covered" data-hits="9" data-linenumber="10">
-          <span class="hits">9</span>
+        <li class="covered" data-hits="10" data-linenumber="10">
+          <span class="hits">10</span>
           
           <code class="ruby">    where(&quot;pet_id = #{pet_id} AND application_id = #{app_id}&quot;).update({status: &quot;Approved&quot;})</code>
         </li>
@@ -3563,14 +3563,14 @@
           <code class="ruby">def self.find_pets_with_approved_application(pet)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="22">
+          <span class="hits">4</span>
           
           <code class="ruby">  pet_status = ApplicationPet.where(&quot;pet_id = #{pet.id} AND status = &#39;Approved&#39;&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="4" data-linenumber="23">
+          <span class="hits">4</span>
           
           <code class="ruby">  pet_status.length == 0 ? true : false</code>
         </li>
@@ -15827,8 +15827,8 @@
     <h3>spec/models/pet_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>30</b> lines covered</span> and
+      <b>35</b> relevant lines. 
+      <span class="green"><b>35</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -16184,19 +16184,49 @@
           <code class="ruby">    it &quot;find_pets_with_approved_application&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      ApplicationPet.approve_status(@pet_1.id, @app_1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      bool = Pet.find_pets_with_approved_application(@pet_1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(bool).to eq(false)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      bool = Pet.find_pets_with_approved_application(@pet_2)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(bool).to eq(true)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">end</code>

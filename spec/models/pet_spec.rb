@@ -56,6 +56,11 @@ describe Pet, type: :model do
     end
 
     it "find_pets_with_approved_application" do
+      ApplicationPet.approve_status(@pet_1.id, @app_1.id)
+      bool = Pet.find_pets_with_approved_application(@pet_1)
+      expect(bool).to eq(false)
+      bool = Pet.find_pets_with_approved_application(@pet_2)
+      expect(bool).to eq(true)
     end
   end
 end
