@@ -29,8 +29,8 @@ RSpec.describe Favorite do
         '1' => 1,
         '2' => 1
       })
-      favorites.remove_pet(3)
-      expect(favorites.contents).to eq({'1' => 1, '2' => 1})
+      favorites.remove_pet(2)
+      expect(favorites.contents).to eq({'1' => 1})
     end
 
     it "favorites pets" do
@@ -53,12 +53,17 @@ RSpec.describe Favorite do
         pet_1.id => 1,
         pet_2.id => 1
       })
-      expect(favorites.total_count).to eq(2)
       result = favorites.favorite_pets
       expect(result).to eq([pet_1, pet_2])
     end
 
     it "remove all" do
+      favorites = Favorite.new({
+        '1' => 1,
+        '2' => 1
+      })
+      result = favorites.remove_all
+      expect(result).to eq({})
     end
 
     it "find_pending_adoption_pets" do
