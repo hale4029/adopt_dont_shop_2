@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T17:50:47-07:00">2019-12-11T17:50:47-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-12-11T17:57:41-07:00">2019-12-11T17:57:41-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.57%</span></span>
+    (<span class="covered_percent"><span class="green">98.59%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>50</b> files in total.
-    <b>1263</b> relevant lines. 
-    <span class="green"><b>1245</b> lines covered</span> and
+    <b>1273</b> relevant lines. 
+    <span class="green"><b>1255</b> lines covered</span> and
     <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -207,7 +207,7 @@
         <td>19</td>
         <td>19</td>
         <td>0</td>
-        <td>8.2</td>
+        <td>8.7</td>
       </tr>
       
       <tr>
@@ -533,11 +533,11 @@
       <tr>
         <td class="strong"><a href="#2546efaa57b602cf2e5108e3a1805a6b158beb40" class="src_link" title="spec/models/shelter_spec.rb">spec/models/shelter_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>64</td>
-        <td>28</td>
-        <td>28</td>
+        <td>88</td>
+        <td>38</td>
+        <td>38</td>
         <td>0</td>
-        <td>1.9</td>
+        <td>1.7</td>
       </tr>
       
       <tr>
@@ -3787,14 +3787,14 @@
           <code class="ruby">  def avg_review</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="19">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="19">
+          <span class="hits">22</span>
           
           <code class="ruby">    result = Review.where(&quot;shelter_id = #{self.id}&quot;).average(:rating)</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="20">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="20">
+          <span class="hits">22</span>
           
           <code class="ruby">    result == nil ? 0 : result.round(1)</code>
         </li>
@@ -3817,26 +3817,26 @@
           <code class="ruby">  def number_of_apps_on_file</code>
         </li>
       
-        <li class="covered" data-hits="24" data-linenumber="24">
-          <span class="hits">24</span>
+        <li class="covered" data-hits="26" data-linenumber="24">
+          <span class="hits">26</span>
           
           <code class="ruby">    pet_ids = self.pets.map { |pet| pet.id }</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="25">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="25">
+          <span class="hits">22</span>
           
           <code class="ruby">    applications = pet_ids.reduce([]) do |acc, id|</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="26">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="26">
+          <span class="hits">4</span>
           
           <code class="ruby">      acc &lt;&lt; ApplicationPet.where(&quot;pet_id = #{id}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="27">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="27">
+          <span class="hits">4</span>
           
           <code class="ruby">      acc.reject(&amp;:empty?)</code>
         </li>
@@ -3847,8 +3847,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="29">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="29">
+          <span class="hits">22</span>
           
           <code class="ruby">    applications.flatten.length</code>
         </li>
@@ -3871,8 +3871,8 @@
           <code class="ruby">  def pet_count</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="33">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="33">
+          <span class="hits">22</span>
           
           <code class="ruby">    self.pets.count</code>
         </li>
@@ -16345,8 +16345,8 @@
     <h3>spec/models/shelter_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>28</b> relevant lines. 
-      <span class="green"><b>28</b> lines covered</span> and
+      <b>38</b> relevant lines. 
+      <span class="green"><b>38</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -16684,55 +16684,199 @@
           <code class="ruby">    it &quot;avg_review&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="56">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    end</code>
+          <code class="ruby">      Review.create(title: &quot;Great experience!&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                rating: 5,</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="58">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="58">
           
-          <code class="ruby">    it &quot;number_of_apps_on_file&quot; do</code>
+          
+          <code class="ruby">                                content: &quot;I got a snake from here and he is wonderful.&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                picture: &quot;https://www.virginiamercury.com/wp-content/uploads/2019/04/garter400.jpg&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                                shelter_id: @shelter_1.id)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &quot;pet_count&quot; do</code>
+          <code class="ruby">      Review.create(title: &quot;Bad experience!&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="62">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">                                rating: 1,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">                                content: &quot;I got a snake from here and he is wonderful.&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">                                picture: &quot;https://www.virginiamercury.com/wp-content/uploads/2019/04/garter400.jpg&quot;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby">                                shelter_id: @shelter_1.id)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      result = @shelter_1.avg_review</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result).to eq(3)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;number_of_apps_on_file&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @app_2 = Application.create(name: &#39;Harry&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">                                  address: &#39;1234 Lame Street&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">                                  city: &#39;Denver&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">                                  state: &#39;CO&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">                                  zip: &#39;80211&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">                                  phone: &#39;720-111-2222&#39;,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">                                  description: &#39;I love all of these pets.&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="78">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @app_2.pets &lt;&lt; [@pet_1]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="79">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      result = @shelter_1.number_of_apps_on_file</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="80">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result).to eq(2)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;pet_count&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      result = @shelter_1.pet_count</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(result).to eq(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="88">
           
           
           <code class="ruby">end</code>

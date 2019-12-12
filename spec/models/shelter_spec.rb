@@ -53,12 +53,36 @@ describe Shelter, type: :model do
     end
 
     it "avg_review" do
+      Review.create(title: "Great experience!",
+                                rating: 5,
+                                content: "I got a snake from here and he is wonderful.",
+                                picture: "https://www.virginiamercury.com/wp-content/uploads/2019/04/garter400.jpg",
+                                shelter_id: @shelter_1.id)
+      Review.create(title: "Bad experience!",
+                                rating: 1,
+                                content: "I got a snake from here and he is wonderful.",
+                                picture: "https://www.virginiamercury.com/wp-content/uploads/2019/04/garter400.jpg",
+                                shelter_id: @shelter_1.id)
+      result = @shelter_1.avg_review
+      expect(result).to eq(3)
     end
 
     it "number_of_apps_on_file" do
+      @app_2 = Application.create(name: 'Harry',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
+      @app_2.pets << [@pet_1]
+      result = @shelter_1.number_of_apps_on_file
+      expect(result).to eq(2)
     end
 
     it "pet_count" do
+      result = @shelter_1.pet_count
+      expect(result).to eq(1)
     end
   end
 end
