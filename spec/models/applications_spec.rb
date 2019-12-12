@@ -16,16 +16,31 @@ describe Application, type: :model do
     it { should have_many(:pets).through(:application_pets) }
   end
 
-  describe "methods" do
-    it "can update adoption status of pet" do
+  describe "model methods" do
+    before :each do
+      @shelter_1 = Shelter.create(name: "Save Cats",
+                                address: "123 Pine",
+                                city: "Denver",
+                                state: "Colorado",
+                                zip: 80112)
 
-      @shelter_1 = Shelter.create(name:    "Reptile Room",
-                                  address: "2364 Desert Lane",
-                                  city:    "Denver",
-                                  state:   "CO",
-                                  zip:     "80211")
+      @pet_1 = @shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
+                          name: "Jersey",
+                          approximate_age: "10",
+                          sex: "Male")
+      @pet_2 = @shelter_1.pets.create(image: 'https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/09/dog-landing-hero-lg.jpg?bust=1536935129&width=1080',
+                          name: "Hershey",
+                          approximate_age: "10",
+                          sex: "Female")
+    end
 
-      @app_1 = Application.create(name: 'Harrison Levin',
+    it "find pets" do
+      pet_objects = Application.find_pets([@pet_1.id, @pet_2.id])
+      expect(pet_objects).to eq([@pet_1, @pet_2])
+    end
+
+    it "find applicants" do
+      app_1 = Application.create(name: 'Harrison Levin',
                                   address: '1234 Lame Street',
                                   city: 'Denver',
                                   state: 'CO',
@@ -33,24 +48,52 @@ describe Application, type: :model do
                                   phone: '720-111-2222',
                                   description: 'I love all of these pets.')
 
-      @pet_1 = Pet.create(image:      "https://www.lllreptile.com/uploads/images/StoreInventoryImage/14570/large",
-                          name:       "Alfredo",
-                          description:       "I'm a white ball python!",
-                          approximate_age:        "4",
-                          sex:        "female",
-                          adoption_status:     "adoptable",
-                          shelter_id: @shelter_1.id)
+      app_1.pets << [@pet_1, @pet_2]
+      name_id = Application.find_applicants(@pet_1)
+      expect(name_id.first.name).to eq("Harrison Levin")
+      expect(name_id.first.id).to eq(app_1.id)
+    end
 
-      @pet_2 = Pet.create(image:     "https://www.geek.com/wp-content/uploads/2019/04/pantherchameleon1-625x352.jpg",
-                         name:       "Poppy",
-                         description:       "I'm a panther chameleon! I am not very social but am fun to look at.",
-                         approximate_age:        "2",
-                         sex:        "male",
-                         adoption_status:     "adoptable",
-                         shelter_id: @shelter_1.id)
+    it "find multiple applicants" do
+      app_1 = Application.create(name: 'Harrison Levin',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
 
-      pets = [@pet_1, @pet_2]
-      
+      app_1.pets << [@pet_1, @pet_2]
+      app_2 = Application.create(name: 'Harry',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
+
+      app_2.pets << [@pet_1, @pet_2]
+      app_ids = [app_2.id, app_1.id]
+      result = Application.find_multiple_applicants(app_ids).flatten
+      expect(result.first.name).to eq("Harry")
+      expect(result.last.name).to eq("Harrison Levin")
+    end
+
+    it "button_logic" do
+      app_1 = Application.create(name: 'Harrison Levin',
+                                  address: '1234 Lame Street',
+                                  city: 'Denver',
+                                  state: 'CO',
+                                  zip: '80211',
+                                  phone: '720-111-2222',
+                                  description: 'I love all of these pets.')
+
+      app_1.pets << [@pet_1, @pet_2]
+      result = app_1.button_logic(@pet_1, app_1.id)
+      expect(result).to eq(false)
+      ApplicationPet.approve_status(@pet_1.id, app_1.id)
+      result = app_1.button_logic(@pet_1, app_1.id)
+      expect(result).to eq(true)
     end
   end
 end

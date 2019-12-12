@@ -14,11 +14,7 @@ class Application < ApplicationRecord
     ids.map { |id| Pet.find(id) }
   end
 
-  def self.remove_all_pets_from_favorites(pets, favorites)
-    pets.each { |pet| favorites.remove_pet(pet.id) }
-  end
-
-  def self.find_applicant(pet)
+  def self.find_applicants(pet)
     Application.select(:name, :id).joins(:pets).where("pets.id = #{pet.id}")
   end
 
